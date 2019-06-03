@@ -1,9 +1,13 @@
 # RxMVVMC
 
-# RxMVVMC demonstrate MVVM pattern with RxSwift plus coordinator pattern to navigate to different View controller
+**RxMVVMC demonstrate MVVM pattern with RxSwift plus coordinator pattern**
 
-1. MVVM architecture to keeps View Controller light weight and VCs are responsible only hook and update views
-2. View Model has all business logics. They talk to Services and notify view controllers. Also code in ViewModel makes code testing way easy. All dependecies are injected so that Mocking is easly done
-3. RxSwift used for webservices data and seemlessly passing data from Service -> ViewModel -> ViewController
-4. Coordinator takes all the responsibility of navigation and app flow task. View Controller becomes more lighter and can be resused without hassle.
+1. MVVM architecture to keeps View Controller light weigh 
+2. VCs are only responsible to hook and update views
+3. View Model has all business logics. They talk to Services and notify/bind to view controllers. 
+4.  Code in ViewModel makes code testing way easy. All dependecies are injected so that Mocking can be done with ease
+3. RxSwift used here for webservices call and transfer of data from Service -> ViewModel -> ViewController
+4. Coordinator takes all the responsibility of navigation and app flow task. 
+5. View Controller becomes much lighter and can be used without hassle.
+6. MVVMC + RxSwift is more clean and maintainable.
 5. Yet to include Unit Test
