@@ -11,3 +11,8 @@
 5. View Controller becomes much lighter and can be used without hassle.
 6. MVVMC + RxSwift is more clean and maintainable.
 5. Yet to include Unit Test
+
+Project uses cocopod. Make sure you do
+`pod init`
+`pod install`
+ open workspace
