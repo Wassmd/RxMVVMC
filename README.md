@@ -13,6 +13,10 @@
 5. Yet to include Unit Test
 
 Project uses cocopod. Make sure you do
+
 `pod init`
+
 `pod install`
- open workspace and run on iPad simulator
+
+ open workspace 
+ Run on iPad simulator :)
