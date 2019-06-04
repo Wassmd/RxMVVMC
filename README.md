@@ -18,5 +18,6 @@ Project uses cocopod. Make sure you do
 
 `pod install`
 
- open workspace 
+ open workspace
+ 
  Run on iPad simulator :)
