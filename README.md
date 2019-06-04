@@ -20,4 +20,4 @@ Project uses cocopod. Make sure you do
 
  open workspace
  
- Run on iPad simulator :)
+ Run on iPad simulator/Device :)
