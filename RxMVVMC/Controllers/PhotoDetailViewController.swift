@@ -3,6 +3,7 @@ import Kingfisher
 
 class PhotoDetailViewController: UIViewController {
 
+
     // MARK: - Properties
     // MARK: Constants
     
@@ -24,6 +25,7 @@ class PhotoDetailViewController: UIViewController {
         return imageView
     }()
     
+    
     // MARK: - Initializers
     
     init(photo: Photo) {
@@ -37,7 +39,7 @@ class PhotoDetailViewController: UIViewController {
     }
 
 
-    // MARK: LifeCycle
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

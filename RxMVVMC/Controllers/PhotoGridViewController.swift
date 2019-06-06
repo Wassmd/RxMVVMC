@@ -109,7 +109,6 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     private func setupObserving() {
         viewModel.photosRelayObserver.asDriver(onErrorJustReturn: [])
-            .skip(1)
             .drive(onNext: { [weak self] _ in
                 self?.collectionView.reloadData()
                 self?.hideLoadingView()

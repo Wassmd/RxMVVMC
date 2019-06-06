@@ -20,7 +20,7 @@ final class PhotoGridViewModel {
     private let errorRelay = PublishRelay<Error>()
     
     var photosRelayObserver: Observable<[Photo]> {
-        return photosRelay.asObservable()
+        return photosRelay.skip(1).asObservable()
     }
     var errorRelayObserver: Observable<Error> {
         return errorRelay.asObservable()
