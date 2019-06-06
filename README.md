@@ -1,6 +1,6 @@
 # RxMVVMC
 
-**RxMVVMC demonstrate MVVM pattern with RxSwift plus coordinator pattern**
+**RxMVVMC demonstrates MVVM + coordinator pattern with RxSwift programming **
 
 1. MVVM architecture to keeps View Controller light weight
 2. VCs are only responsible to hook and update views
