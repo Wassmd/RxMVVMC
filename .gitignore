@@ -1,0 +1,25 @@
+############################
+# Xcode build files        #
+############################
+DerivedData/
+DerivedData
+build/
+
+############################
+# Xcode misc files         #
+############################
+xcuserdata/
+xcuserdata
+*.xcuserstate
+*.xcscmblueprint
+
+############################
+# Xcode source control     #
+############################
+*.xccheckout
+
+############################
+# Cocoapods                #
+############################
+Pods/
+
