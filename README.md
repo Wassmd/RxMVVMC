@@ -14,10 +14,12 @@
 
 Project uses cocopod. Make sure you do
 
-`pod init`
+```swift
 
-`pod install`
+pod init
+pod install
 
- open workspace
- 
- Run on iPad simulator/Device :)
+```
+
+ * open workspace
+ * Run on iPad simulator/Device :)
