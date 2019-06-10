@@ -22,4 +22,4 @@ pod install
 ```
 
  * open workspace
- * Run on iPad simulator/Device :)
+ * Run on iPad simulator/Device :]
