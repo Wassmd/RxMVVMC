@@ -23,3 +23,7 @@ pod install
 
  * open workspace
  * Run on iPad simulator/Device :]
+ 
+ 
+ Demo
+ https://github.com/Wassmd/RxMVVMC/blob/master/Cats.gif
