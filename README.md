@@ -26,4 +26,5 @@ pod install
  
  
  Demo
- https://github.com/Wassmd/RxMVVMC/blob/master/Cats.gif
+ 
+ ![alt-text](https://github.com/Wassmd/RxMVVMC/blob/master/Cats.gif)
