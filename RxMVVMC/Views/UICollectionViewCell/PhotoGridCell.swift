@@ -4,7 +4,7 @@ import Kingfisher
 class PhotoGridCell: UICollectionViewCell {
     
     
-    //MARK: InnerTypes
+    // MARK: InnerTypes
     private enum Constants {
         static let titleLabelTopOffset: CGFloat = 8
         static let titleLabelFont = UIFont.boldSystemFont(ofSize: 24)
@@ -75,7 +75,7 @@ class PhotoGridCell: UICollectionViewCell {
     }
     
     
-    //MARK: - Helper
+    // MARK: - Helper
     
     func configureCell(with photo: Photo) {
         titleLabel.text = photo.title

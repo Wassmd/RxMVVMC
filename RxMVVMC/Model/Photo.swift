@@ -15,11 +15,11 @@ struct Photo: Codable {
 
 extension Photo {
     static func photoObject(dict: [String: Any]) -> Photo {
-        let id = dict["id"] as! String
-        let owner = dict["owner"] as! String
-        let secret = dict["secret"] as! String
-        let server = dict["server"] as! String
-        let farm = dict["farm"] as! Int
+        let id = dict["id"] as? String ?? "Kitten"
+        let owner = dict["owner"] as? String ?? "Kitten"
+        let secret = dict["secret"] as? String ?? "Kitten"
+        let server = dict["server"] as? String ?? "Kitten"
+        let farm = dict["farm"] as? Int ?? 123
         let title = dict["title"] as? String ?? "Kitten"
         return Photo(id: id, owner: owner, secret: secret, server: server, farm: farm, title: title)
     }

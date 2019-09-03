@@ -10,14 +10,14 @@ final class AppCoordinator: Coordinatable {
     // MARK: - Properties
     // MARK: Immutable
     
-    public let uniqueId = UUID()
+    let uniqueId = UUID()
     weak var deallocatable: CoordinatorDeallocatable?
-    private let application : UIApplication
+    private let application: UIApplication
     
     
     // MARK: Mutable
     
-    var childCoordinators = [UUID : Coordinatable]()
+    var childCoordinators = [UUID: Coordinatable]()
     private var window: UIWindow?
     
     

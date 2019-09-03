@@ -11,8 +11,8 @@ final class PhotoGridViewModel {
         static let minItemWidth: CGFloat = 200
     }
     
-    //MARK: Properties
-    //MARK: Immutables
+    // MARK: Properties
+    // MARK: Immutables
     
     private let networkService: NetworkService
     private let disposeBag = DisposeBag()
@@ -32,14 +32,14 @@ final class PhotoGridViewModel {
     var scheduler: SchedulerType = ConcurrentDispatchQueueScheduler(qos: .background)
     
     
-    //MARK: - Initializers
+    // MARK: - Initializers
     
-    init(networkService:NetworkService = NetworkService()) {
+    init(networkService: NetworkService = NetworkService()) {
         self.networkService = networkService
     }
     
     
-    //MARK: Action
+    // MARK: Action
     
     func downloadPhotos(isFallBack: Bool = false) {
         networkService.fetchPhotosRequest(isFallback: isFallBack)
@@ -56,7 +56,7 @@ final class PhotoGridViewModel {
     // MARK: - Helper
     
     func initialItemSize(for viewWidth: CGFloat) -> CGSize {
-        guard viewWidth > 0 else { return CGSize.zero}
+        guard viewWidth > 0 else { return CGSize.zero }
         
         let overallItemSize = Constants.minItemWidth + LayoutConstants.defaultPadding
         let numberofItemsPerRow = Int(viewWidth / overallItemSize)
@@ -78,7 +78,7 @@ final class PhotoGridViewModel {
     }
     
     
-    //MARK: - Helpers
+    // MARK: - Helpers
     
     func photo(from dictArray: [[String: Any]]) -> [Photo] {
         return dictArray.map { Photo.photoObject(dict: $0) }

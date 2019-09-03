@@ -23,7 +23,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     private let viewModel: PhotoGridViewModel
     private let disposeBag = DisposeBag()
-    private let coordinatorDelegate: PhotoGridViewControllerDelegate?
+    weak var coordinatorDelegate: PhotoGridViewControllerDelegate?
     private let loadingIndicator = UIActivityIndicatorView(style: .gray)
     
     private let loadingLabel: UILabel = {
@@ -78,7 +78,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     
-    //Mark: Setup
+    // MARK: - Setups
     
     private func setupView() {
         view.backgroundColor = .white
@@ -134,7 +134,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     }
    
     
-    // MARK:- Protocol Conformance
+    // MARK: - Protocol Conformance
     // MARK: UICollectionViewDatasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -153,14 +153,14 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
 
-    //MARK: Actions
+    // MARK: Actions
     
     private func downloadKittensPhotoFallBack() {
         viewModel.downloadPhotos(isFallBack: true)
     }
     
     
-    //MARK: Helper
+    // MARK: Helper
     
     private func handleCollectionViewDidSelectCell(at indexPath: IndexPath) {
         if let photoObject = viewModel.photoObject(at: indexPath) {

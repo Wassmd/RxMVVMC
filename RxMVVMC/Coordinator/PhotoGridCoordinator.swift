@@ -11,7 +11,7 @@ class PhotoGridCoordinator: Coordinatable {
     // MARK: - Properties
     // MARK: Immutable
     
-    public let uniqueId: UUID
+    let uniqueId: UUID
     private var window: UIWindow?
     private let navigationController: UINavigationController
     
@@ -19,7 +19,7 @@ class PhotoGridCoordinator: Coordinatable {
     // MARK: - Mutable
     
     var deallocatable: CoordinatorDeallocatable?
-    var childCoordinators = [UUID : Coordinatable]()
+    var childCoordinators = [UUID: Coordinatable]()
     
     private lazy var photoGridViewModel = PhotoGridViewModel()
     private lazy var photoGridViewController: PhotoGridViewController = {

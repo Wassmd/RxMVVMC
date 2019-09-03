@@ -3,7 +3,7 @@ import RxSwift
 
 class NetworkService {
     
-    typealias dict = [String: Any]
+    typealias Dict = [String: Any]
     
     private enum Constants {
         static let timeout: TimeInterval = 10.0
@@ -35,7 +35,7 @@ class NetworkService {
         self.config.waitsForConnectivity = true
     }
     
-    func fetchPhotosRequest(isFallback: Bool = false) -> Single<[dict]> {
+    func fetchPhotosRequest(isFallback: Bool = false) -> Single<[Dict]> {
         guard let url = getURLString(isFallback) else {
             return Single.error(RequestError.invalidURL)
         }
@@ -44,7 +44,7 @@ class NetworkService {
         let urlSession = URLSession(configuration: config)
         
         return Single.create { [weak self] subscriber -> Disposable in
-            let task = urlSession.dataTask(with: urlRequest) { (data, response, error) in
+            let task = urlSession.dataTask(with: urlRequest) { (data, _, error) in
                 if let error = error {
                     subscriber(.error(error))
                 } else if let data = data {
@@ -54,8 +54,8 @@ class NetworkService {
                             if let networkError = self?.serverError(from: result) {
                                 subscriber(.error(networkError))
                             } else {
-                                if let photosDict = result["photos"] as? dict {
-                                    guard let photos = photosDict["photo"] as? [dict]
+                                if let photosDict = result["photos"] as? Dict {
+                                    guard let photos = photosDict["photo"] as? [Dict]
                                         else { subscriber(.error(ResponseError.noPhotosAvailable)); return }
                                     subscriber(.success(photos))
                                 }
@@ -96,7 +96,7 @@ class NetworkService {
             URLQueryItem(name: "text", value: Constants.searchText),
             URLQueryItem(name: "content_type", value: Constants.json),
             URLQueryItem(name: "format", value: Constants.json),
-            URLQueryItem(name: "nojsoncallback", value: "1"),
+            URLQueryItem(name: "nojsoncallback", value: "1")
         ]
         
         return components.url
@@ -106,9 +106,9 @@ class NetworkService {
 
 extension NetworkService {
     
-    private func serverError(from result: [String:Any]) -> RequestError? {
+    private func serverError(from result: [String: Any]) -> RequestError? {
         guard let status = result["stat"] as? String
-            else { return .unknown}
+            else { return .unknown }
         
         switch status {
         case "ok", "Ok", "OK":

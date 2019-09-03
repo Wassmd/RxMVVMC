@@ -3,7 +3,7 @@ import Foundation
 public protocol CoordinateTo {}
 
 public protocol CoordinatorDeallocatable: AnyObject {
-    var childCoordinators: [UUID: Coordinatable] { get  set}
+    var childCoordinators: [UUID: Coordinatable] { get set }
     
     func deallocate(with identifier: UUID)
 }
@@ -31,4 +31,3 @@ public extension CoordinatorDeallocatable {
         childCoordinators[uniqueId] = nil
     }
 }
-

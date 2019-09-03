@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  IPad_App
-//
-//  Created by Mohammed Wasimuddin on 31.05.19.
-//  Copyright © 2019 Demo. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -26,4 +18,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-
