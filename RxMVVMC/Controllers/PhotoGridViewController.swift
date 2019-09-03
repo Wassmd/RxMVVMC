@@ -46,8 +46,8 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     // MARK: Mutable
     
     private lazy var collectionView: GridCollectionView = {
-        let collectionView = GridCollectionView(itemSize: viewModel.initialItemSize(for: view.bounds.width), minimumPadding: LayoutConstants.defaultPadding)
-        
+        let collectionView = GridCollectionView(itemSize: viewModel.initialItemSize(for: view.bounds.width),
+                                                minimumPadding: LayoutConstants.defaultPadding)
         return collectionView
     }()
     
