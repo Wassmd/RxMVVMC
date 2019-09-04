@@ -2,10 +2,12 @@ import UIKit
 
 class LoadingView: UIView {
     
+    
     // MARK: - Inner Types
     
     private enum Constants {
-        static let loadingViewSize = CGSize(square: 80)
+        static let loadingViewHeight: CGFloat = 80
+        static let loadingViewWidth: CGFloat = 80
         static let defaultPadding: CGFloat = 8
     }
     
@@ -64,7 +66,8 @@ class LoadingView: UIView {
         loadingStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         loadingStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
-        pinSize(to: Constants.loadingViewSize)
+        widthAnchor.constraint(equalToConstant: Constants.loadingViewWidth).isActive = true
+        heightAnchor.constraint(equalToConstant: Constants.loadingViewHeight).isActive = true
     }
     
     
@@ -80,10 +83,13 @@ class LoadingView: UIView {
         loadingIndicator.stopAnimating()
     }
     
+    
     // MARK: - Helpers
     
     func placeInCenter(of view: UIView) {
-        centerVertically(to: view)
-        centerHorizontally(to: view)
+        NSLayoutConstraint.activate([
+            centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
     }
 }

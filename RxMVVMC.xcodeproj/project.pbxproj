@@ -131,6 +131,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5F151444231FA6D800EEE9ED /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				5F151440231F9E3600EEE9ED /* LoadingView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		5FC6BFD222A54B8700F17764 = {
 			isa = PBXGroup;
 			children = (
@@ -156,8 +164,8 @@
 				5FC6BFFE22A54BAA00F17764 /* Application */,
 				5FC6C01C22A54D5B00F17764 /* Coordinator */,
 				5FC6C00D22A54D5A00F17764 /* Controllers */,
-				5FC6C02422A54D5B00F17764 /* Views */,
 				5FC6C00B22A54D5A00F17764 /* ViewModel */,
+				5FC6C02422A54D5B00F17764 /* Views */,
 				5FC6C02222A54D5B00F17764 /* Model */,
 				5FC6C01022A54D5A00F17764 /* Extensions */,
 				5FC6C00122A54D5A00F17764 /* Helpers */,
@@ -304,9 +312,9 @@
 		5FC6C02422A54D5B00F17764 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5F151444231FA6D800EEE9ED /* Custom */,
 				5FC6C02522A54D5B00F17764 /* GridCollectionView.swift */,
 				5FC6C02622A54D5B00F17764 /* UICollectionViewCell */,
-				5F151440231F9E3600EEE9ED /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -661,7 +669,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.wasim.RxMVVMC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -683,7 +691,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.wasim.RxMVVMC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
