@@ -12,7 +12,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     // MARK: - Properties
     // MARK: Constants
     
-    enum Constants {
+    private enum Constants {
         static let loadingViewSize = CGSize(square: 80)
         static let defaultPadding: CGFloat = 8
     }
@@ -24,24 +24,8 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     private let viewModel: PhotoGridViewModel
     private let disposeBag = DisposeBag()
     weak var coordinatorDelegate: PhotoGridViewControllerDelegate?
-    private let loadingIndicator = UIActivityIndicatorView(style: .gray)
     
-    private let loadingLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Loading..."
-        label.font = UIFont.boldSystemFont(ofSize: 15)
-        label.textColor = .gray
-        return label
-    }()
-    
-    private let loadingStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.distribution = .equalSpacing
-        return stackView
-    }()
-    
+    private let loadingView = LoadingView()
     
     // MARK: Mutable
     
@@ -83,25 +67,21 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     private func setupView() {
         view.backgroundColor = .white
         self.title = "Leopard"
-        loadingIndicator.startAnimating()
     }
     
     private func setupSubViews() {
-        loadingStackView.addArrangedSubview(loadingIndicator)
-        loadingStackView.addArrangedSubview(loadingLabel)
-        view.addSubview(collectionView)
-        view.addSubview(loadingStackView)
+        [collectionView, loadingView].forEach(view.addSubview(_:))
         
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(PhotoGridCell.self, forCellWithReuseIdentifier: PhotoGridCell.reusableString)
+        
+        loadingView.show()
     }
     
     private func setupConstraints() {
-        loadingStackView.centerVertically(to: view)
-        loadingStackView.centerHorizontally(to: view)
-        loadingStackView.pinSize(to: Constants.loadingViewSize)
         collectionView.pinEdges(to: view)
+        loadingView.placeInCenter(of: view)
     }
     
     
@@ -169,6 +149,6 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     private func hideLoadingView() {
-        loadingStackView.isHidden = true
+        loadingView.hide()
     }
 }
