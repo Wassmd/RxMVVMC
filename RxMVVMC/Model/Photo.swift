@@ -1,26 +1,29 @@
 import Foundation
 
-struct Photo: Codable {
+struct PhotosDetail: Decodable {
+    let photos: Photos
+    let stat: String
+}
+
+struct Photos: Decodable {
+    let page: Int
+    let pages: Int
+    let perpage: Int
+    let total: String
+    let photo: [Photo]
+}
+
+struct Photo: Decodable {
     let id: String
     let owner: String
     let secret: String
     let server: String
     let farm: Int
     let title: String?
-    
-    var imageUrl: String {
-        return "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret).jpg"
-    }
 }
 
 extension Photo {
-    static func photoObject(dict: [String: Any]) -> Photo {
-        let id = dict["id"] as? String ?? "Kitten"
-        let owner = dict["owner"] as? String ?? "Kitten"
-        let secret = dict["secret"] as? String ?? "Kitten"
-        let server = dict["server"] as? String ?? "Kitten"
-        let farm = dict["farm"] as? Int ?? 123
-        let title = dict["title"] as? String ?? "Kitten"
-        return Photo(id: id, owner: owner, secret: secret, server: server, farm: farm, title: title)
+    var photoUrl: String {
+        return "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret).jpg"
     }
 }

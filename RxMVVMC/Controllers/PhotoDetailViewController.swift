@@ -75,7 +75,7 @@ class PhotoDetailViewController: UIViewController {
     // MARK: - Action
     
     func loadImageURL() {
-        let imageURL = URL(string: photo.imageUrl)
+        let imageURL = URL(string: photo.photoUrl)
         imageView.kf.setImage(with: imageURL)
     }
 }
