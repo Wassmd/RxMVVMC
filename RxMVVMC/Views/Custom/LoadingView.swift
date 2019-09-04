@@ -60,7 +60,6 @@ class LoadingView: UIView {
     }
     
     private func setupConstraints() {
-        loadingStackView.translatesAutoresizingMaskIntoConstraints = false
         loadingStackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         loadingStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         loadingStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
@@ -90,6 +89,6 @@ class LoadingView: UIView {
         NSLayoutConstraint.activate([
             centerYAnchor.constraint(equalTo: view.centerYAnchor),
             centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
+            ])
     }
 }

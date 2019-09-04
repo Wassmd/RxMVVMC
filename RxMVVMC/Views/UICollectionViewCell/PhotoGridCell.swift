@@ -80,7 +80,7 @@ class PhotoGridCell: UICollectionViewCell {
     func configureCell(with photo: Photo) {
         titleLabel.text = photo.title
         
-        let url = URL(string: photo.imageUrl)
+        let url = URL(string: photo.photoUrl)
         imageView.kf.setImage(with: url)
     }
 }

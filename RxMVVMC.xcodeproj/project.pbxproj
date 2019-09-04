@@ -15,9 +15,11 @@
 		5F0DB873231F03E50021B883 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DB872231F03E50021B883 /* XCGLogger.framework */; };
 		5F0DB875231F07410021B883 /* RxGesture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DB874231F07410021B883 /* RxGesture.framework */; };
 		5F151441231F9E3600EEE9ED /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F151440231F9E3600EEE9ED /* LoadingView.swift */; };
+		5F151449231FC4B200EEE9ED /* PhotoDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F151448231FC4B200EEE9ED /* PhotoDownloadService.swift */; };
+		5F15144C231FC7AC00EEE9ED /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15144B231FC7AC00EEE9ED /* Loader.swift */; };
+		5F15144E231FE79800EEE9ED /* URL+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15144D231FE79800EEE9ED /* URL+Endpoints.swift */; };
 		5FC6BFDF22A54B8800F17764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */; };
 		5FC6BFF422A54B8800F17764 /* RxMVVMCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFF322A54B8800F17764 /* RxMVVMCTests.swift */; };
-		5FC6C02822A54D5B00F17764 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C00022A54D5A00F17764 /* NetworkService.swift */; };
 		5FC6C02922A54D5B00F17764 /* LayoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C00222A54D5A00F17764 /* LayoutConstants.swift */; };
 		5FC6C02A22A54D5B00F17764 /* ViewCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C00322A54D5A00F17764 /* ViewCreator.swift */; };
 		5FC6C02B22A54D5B00F17764 /* ResuableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C00522A54D5A00F17764 /* ResuableView.swift */; };
@@ -61,13 +63,15 @@
 		5F0DB872231F03E50021B883 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		5F0DB874231F07410021B883 /* RxGesture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxGesture.framework; path = Carthage/Build/iOS/RxGesture.framework; sourceTree = "<group>"; };
 		5F151440231F9E3600EEE9ED /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		5F151448231FC4B200EEE9ED /* PhotoDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDownloadService.swift; sourceTree = "<group>"; };
+		5F15144B231FC7AC00EEE9ED /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		5F15144D231FE79800EEE9ED /* URL+Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Endpoints.swift"; sourceTree = "<group>"; };
 		5FC6BFDB22A54B8700F17764 /* RxMVVMC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxMVVMC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FC6BFEA22A54B8800F17764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC6BFEF22A54B8800F17764 /* RxMVVMCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxMVVMCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC6BFF322A54B8800F17764 /* RxMVVMCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMVVMCTests.swift; sourceTree = "<group>"; };
 		5FC6BFF522A54B8800F17764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FC6C00022A54D5A00F17764 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5FC6C00222A54D5A00F17764 /* LayoutConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstants.swift; sourceTree = "<group>"; };
 		5FC6C00322A54D5A00F17764 /* ViewCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCreator.swift; sourceTree = "<group>"; };
 		5FC6C00522A54D5A00F17764 /* ResuableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResuableView.swift; sourceTree = "<group>"; };
@@ -139,6 +143,22 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		5F151445231FBFED00EEE9ED /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5F151448231FC4B200EEE9ED /* PhotoDownloadService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5F15144A231FC78300EEE9ED /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				5F15144B231FC7AC00EEE9ED /* Loader.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
 		5FC6BFD222A54B8700F17764 = {
 			isa = PBXGroup;
 			children = (
@@ -167,10 +187,12 @@
 				5FC6C00B22A54D5A00F17764 /* ViewModel */,
 				5FC6C02422A54D5B00F17764 /* Views */,
 				5FC6C02222A54D5B00F17764 /* Model */,
+				5F151445231FBFED00EEE9ED /* Services */,
+				5FC6BFFF22A54D5A00F17764 /* Network */,
+				5F15144A231FC78300EEE9ED /* Loader */,
+				5FC6C00422A54D5A00F17764 /* Protocols */,
 				5FC6C01022A54D5A00F17764 /* Extensions */,
 				5FC6C00122A54D5A00F17764 /* Helpers */,
-				5FC6BFFF22A54D5A00F17764 /* Network */,
-				5FC6C00422A54D5A00F17764 /* Protocols */,
 				5FC6C00722A54D5A00F17764 /* Resources */,
 			);
 			path = RxMVVMC;
@@ -197,7 +219,6 @@
 		5FC6BFFF22A54D5A00F17764 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				5FC6C00022A54D5A00F17764 /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -270,6 +291,7 @@
 		5FC6C01522A54D5A00F17764 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				5F15144D231FE79800EEE9ED /* URL+Endpoints.swift */,
 				5FC6C01622A54D5A00F17764 /* Optional+Generic.swift */,
 				5FC6C01722A54D5A00F17764 /* Array+Generic.swift */,
 			);
@@ -494,16 +516,18 @@
 				5FC6C03D22A54D5B00F17764 /* GridCollectionView.swift in Sources */,
 				5FC6C03E22A54D5B00F17764 /* PhotoGridCell.swift in Sources */,
 				5FC6C03422A54D5B00F17764 /* UIAlertController+ErrorAlert.swift in Sources */,
+				5F151449231FC4B200EEE9ED /* PhotoDownloadService.swift in Sources */,
 				5F151441231F9E3600EEE9ED /* LoadingView.swift in Sources */,
 				5FC6C03622A54D5B00F17764 /* Array+Generic.swift in Sources */,
 				5FC6C03922A54D5B00F17764 /* AppCoordinator.swift in Sources */,
 				5FC6C02922A54D5B00F17764 /* LayoutConstants.swift in Sources */,
-				5FC6C02822A54D5B00F17764 /* NetworkService.swift in Sources */,
 				5FC6BFDF22A54B8800F17764 /* AppDelegate.swift in Sources */,
 				5FC6C03222A54D5B00F17764 /* UIEdgeInsets+AllEdges.swift in Sources */,
 				5FC6C03522A54D5B00F17764 /* Optional+Generic.swift in Sources */,
+				5F15144E231FE79800EEE9ED /* URL+Endpoints.swift in Sources */,
 				5FC6C02A22A54D5B00F17764 /* ViewCreator.swift in Sources */,
 				5FC6C03722A54D5B00F17764 /* CGSize+AllDimensions.swift in Sources */,
+				5F15144C231FC7AC00EEE9ED /* Loader.swift in Sources */,
 				5FC6C02F22A54D5B00F17764 /* PhotoGridViewModel.swift in Sources */,
 				5FC6C03322A54D5B00F17764 /* UIView+Layout.swift in Sources */,
 				5FC6C03C22A54D5B00F17764 /* Photo.swift in Sources */,

@@ -14,10 +14,11 @@ final class PhotoGridViewModel {
     // MARK: Properties
     // MARK: Immutables
     
-    private let networkService: NetworkService
     private let disposeBag = DisposeBag()
     private let photosRelay = BehaviorRelay<[Photo]>(value: [])
     private let errorRelay = PublishRelay<Error>()
+    
+    private let downloadService: PhotoDownloadServiceProtocol
     
     var photosRelayObserver: Observable<[Photo]> {
         return photosRelay.skip(1).asObservable()
@@ -34,20 +35,21 @@ final class PhotoGridViewModel {
     
     // MARK: - Initializers
     
-    init(networkService: NetworkService = NetworkService()) {
-        self.networkService = networkService
+    init(downloadService: PhotoDownloadServiceProtocol = PhotoDownloadService()) {
+        self.downloadService = downloadService
     }
     
     
     // MARK: Action
     
     func downloadPhotos(isFallBack: Bool = false) {
-        networkService.fetchPhotosRequest(isFallback: isFallBack)
+        downloadService.downloadPhotos(with: "Spider")
             .subscribeOn(scheduler)
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] in
                 guard let self = self else { return }
-                self.photosRelay.accept(self.photo(from: $0))
+                self.photosRelay.accept($0)
+                
                 }, onError: { [weak self] in self?.handleError(error: $0) })
             .disposed(by: disposeBag)
     }
@@ -79,10 +81,6 @@ final class PhotoGridViewModel {
     
     
     // MARK: - Helpers
-    
-    func photo(from dictArray: [[String: Any]]) -> [Photo] {
-        return dictArray.map { Photo.photoObject(dict: $0) }
-    }
     
     func handleError(error: Error) {
         errorRelay.accept(error)

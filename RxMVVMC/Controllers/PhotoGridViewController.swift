@@ -100,7 +100,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
                 guard let self = self else { return }
                 self.coordinatorDelegate?.showErrorAlert(with: $0.localizedDescription)
                 self.hideLoadingView()
-                self.downloadKittensPhotoFallBack()
+//                self.downloadKittensPhotoFallBack()
             })
             .disposed(by: disposeBag)
         
