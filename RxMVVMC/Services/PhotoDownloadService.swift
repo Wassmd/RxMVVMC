@@ -1,5 +1,6 @@
 import Foundation
 import RxSwift
+import EndPointLoader
 
 protocol PhotoDownloadServiceProtocol {
     func downloadPhotos(with searchText: String) -> Single<[Photo]>

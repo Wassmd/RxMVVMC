@@ -18,6 +18,9 @@
 		5F151449231FC4B200EEE9ED /* PhotoDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F151448231FC4B200EEE9ED /* PhotoDownloadService.swift */; };
 		5F15144C231FC7AC00EEE9ED /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15144B231FC7AC00EEE9ED /* Loader.swift */; };
 		5F15144E231FE79800EEE9ED /* URL+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15144D231FE79800EEE9ED /* URL+Endpoints.swift */; };
+		5F15147D23205E3D00EEE9ED /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F15147C23205E3D00EEE9ED /* Crashlytics.framework */; };
+		5F15149D232125DA00EEE9ED /* EndPointLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1514982321259E00EEE9ED /* EndPointLoader.framework */; };
+		5F15149E232125DA00EEE9ED /* EndPointLoader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1514982321259E00EEE9ED /* EndPointLoader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FC6BFDF22A54B8800F17764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */; };
 		5FC6BFF422A54B8800F17764 /* RxMVVMCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFF322A54B8800F17764 /* RxMVVMCTests.swift */; };
 		5FC6C02922A54D5B00F17764 /* LayoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C00222A54D5A00F17764 /* LayoutConstants.swift */; };
@@ -53,6 +56,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5F15149F232125DA00EEE9ED /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5F15149E232125DA00EEE9ED /* EndPointLoader.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5F0DB865231F03340021B883 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		5F0DB868231F03E00021B883 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
@@ -66,6 +83,8 @@
 		5F151448231FC4B200EEE9ED /* PhotoDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDownloadService.swift; sourceTree = "<group>"; };
 		5F15144B231FC7AC00EEE9ED /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		5F15144D231FE79800EEE9ED /* URL+Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Endpoints.swift"; sourceTree = "<group>"; };
+		5F15147C23205E3D00EEE9ED /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
+		5F1514982321259E00EEE9ED /* EndPointLoader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EndPointLoader.framework; path = Frameworks/EndPointLoader.framework; sourceTree = "<group>"; };
 		5FC6BFDB22A54B8700F17764 /* RxMVVMC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxMVVMC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FC6BFEA22A54B8800F17764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,9 +119,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F15147D23205E3D00EEE9ED /* Crashlytics.framework in Frameworks */,
 				5F0DB867231F03670021B883 /* Kingfisher.framework in Frameworks */,
 				5F0DB86E231F03E00021B883 /* RxSwift.framework in Frameworks */,
 				5F0DB86F231F03E00021B883 /* ObjcExceptionBridging.framework in Frameworks */,
+				5F15149D232125DA00EEE9ED /* EndPointLoader.framework in Frameworks */,
 				5F0DB873231F03E50021B883 /* XCGLogger.framework in Frameworks */,
 				5F0DB870231F03E00021B883 /* RxCocoa.framework in Frameworks */,
 				5F0DB871231F03E00021B883 /* RxBlocking.framework in Frameworks */,
@@ -123,6 +144,8 @@
 		5F0DB864231F03340021B883 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F1514982321259E00EEE9ED /* EndPointLoader.framework */,
+				5F15147C23205E3D00EEE9ED /* Crashlytics.framework */,
 				5F0DB874231F07410021B883 /* RxGesture.framework */,
 				5F0DB872231F03E50021B883 /* XCGLogger.framework */,
 				5F0DB86A231F03E00021B883 /* ObjcExceptionBridging.framework */,
@@ -188,7 +211,6 @@
 				5FC6C02422A54D5B00F17764 /* Views */,
 				5FC6C02222A54D5B00F17764 /* Model */,
 				5F151445231FBFED00EEE9ED /* Services */,
-				5FC6BFFF22A54D5A00F17764 /* Network */,
 				5F15144A231FC78300EEE9ED /* Loader */,
 				5FC6C00422A54D5A00F17764 /* Protocols */,
 				5FC6C01022A54D5A00F17764 /* Extensions */,
@@ -214,13 +236,6 @@
 				5FC6BFEA22A54B8800F17764 /* Info.plist */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		5FC6BFFF22A54D5A00F17764 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		5FC6C00122A54D5A00F17764 /* Helpers */ = {
@@ -361,6 +376,7 @@
 				5FC6BFD922A54B8700F17764 /* Resources */,
 				5F0DB862231EF92E0021B883 /* Carthage */,
 				5F15143F231F0F0E00EEE9ED /* Swiftlint */,
+				5F15149F232125DA00EEE9ED /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -683,12 +699,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = RxMVVMC/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.wasim.RxMVVMC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -705,12 +723,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = RxMVVMC/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.wasim.RxMVVMC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
