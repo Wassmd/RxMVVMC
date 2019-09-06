@@ -1,6 +1,6 @@
 import UIKit
 
-class GridCollectionView: UICollectionView {
+public class GridCollectionView: UICollectionView {
 
     // MARK: - Properties
     // MARK: Immutable
@@ -17,13 +17,13 @@ class GridCollectionView: UICollectionView {
     
     // MARK: - Initializers
     
-    init(frame: CGRect = .zero, itemSize: CGSize, minimumPadding: CGFloat) {
+    public init(frame: CGRect = .zero, itemSize: CGSize, minimumPadding: CGFloat) {
         super.init(frame: frame, collectionViewLayout: flowLayout)
         setupFlowLayout(itemSize: itemSize, minimumPadding: minimumPadding)
         setup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

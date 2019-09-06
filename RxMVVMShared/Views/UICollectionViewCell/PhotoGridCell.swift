@@ -1,7 +1,7 @@
 import UIKit
 import Kingfisher
 
-class PhotoGridCell: UICollectionViewCell {
+public class PhotoGridCell: UICollectionViewCell {
     
     
     // MARK: InnerTypes
@@ -48,7 +48,7 @@ class PhotoGridCell: UICollectionViewCell {
     
     // MARK: - View lifecycle
     
-    override func prepareForReuse() {
+    public override func prepareForReuse() {
         super.prepareForReuse()
     }
     
@@ -77,7 +77,7 @@ class PhotoGridCell: UICollectionViewCell {
     
     // MARK: - Helper
     
-    func configureCell(with photo: Photo) {
+    public func configureCell(with photo: Photo) {
         titleLabel.text = photo.title
         
         let url = URL(string: photo.photoUrl)

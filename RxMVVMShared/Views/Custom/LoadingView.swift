@@ -1,6 +1,6 @@
 import UIKit
 
-class LoadingView: UIView {
+public class LoadingView: UIView {
     
     
     // MARK: - Inner Types
@@ -44,7 +44,7 @@ class LoadingView: UIView {
         setupConstraints()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -72,12 +72,12 @@ class LoadingView: UIView {
     
     // MARK: - Actions
     
-    func show() {
+    public func show() {
         isHidden = false
         loadingIndicator.startAnimating()
     }
     
-    func hide() {
+    public func hide() {
         isHidden = true
         loadingIndicator.stopAnimating()
     }
@@ -85,7 +85,7 @@ class LoadingView: UIView {
     
     // MARK: - Helpers
     
-    func placeInCenter(of view: UIView) {
+    public func placeInCenter(of view: UIView) {
         NSLayoutConstraint.activate([
             centerYAnchor.constraint(equalTo: view.centerYAnchor),
             centerXAnchor.constraint(equalTo: view.centerXAnchor)

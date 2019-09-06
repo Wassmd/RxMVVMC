@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import RxMVVMShared
 
 protocol PhotoGridViewControllerDelegate: AnyObject {
     func showDetail(with photo: Photo)

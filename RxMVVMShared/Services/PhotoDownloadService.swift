@@ -2,22 +2,22 @@ import Foundation
 import RxSwift
 import EndPointLoader
 
-protocol PhotoDownloadServiceProtocol {
+public protocol PhotoDownloadServiceProtocol {
     func downloadPhotos(with searchText: String) -> Single<[Photo]>
 }
 
-final class PhotoDownloadService: PhotoDownloadServiceProtocol {
+public final class PhotoDownloadService: PhotoDownloadServiceProtocol {
     
     private let loader: Loader
     private let jsonDecoder: JSONDecoder
     
-    init(loader: Loader = Loader(),
+    public init(loader: Loader = Loader(),
          jsonDecoder: JSONDecoder = JSONDecoder()) {
         self.loader = loader
         self.jsonDecoder = jsonDecoder
     }
     
-    func downloadPhotos(with searchText: String) -> Single<[Photo]> {
+    public func downloadPhotos(with searchText: String) -> Single<[Photo]> {
         var urlQuery = URL.prepareFixedMetaDataForURLComponent
         urlQuery["text"] = searchText
         

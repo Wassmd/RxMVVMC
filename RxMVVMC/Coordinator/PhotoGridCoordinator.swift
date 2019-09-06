@@ -1,4 +1,5 @@
 import UIKit
+import RxMVVMShared
 
 private enum PhotoGridSteps: CoordinateTo {
     case showDetail(Photo)

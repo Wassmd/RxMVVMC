@@ -1,5 +1,6 @@
 import UIKit
 import Kingfisher
+import RxMVVMShared
 
 class PhotoDetailViewController: UIViewController {
 

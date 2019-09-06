@@ -2,7 +2,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class PhotoGridViewModel {
+public final class PhotoGridViewModel {
     
     
     // MARK: - Constants
@@ -20,10 +20,10 @@ final class PhotoGridViewModel {
     
     private let downloadService: PhotoDownloadServiceProtocol
     
-    var photosRelayObserver: Observable<[Photo]> {
+    public var photosRelayObserver: Observable<[Photo]> {
         return photosRelay.skip(1).asObservable()
     }
-    var errorRelayObserver: Observable<Error> {
+    public var errorRelayObserver: Observable<Error> {
         return errorRelay.asObservable()
     }
     
@@ -35,14 +35,14 @@ final class PhotoGridViewModel {
     
     // MARK: - Initializers
     
-    init(downloadService: PhotoDownloadServiceProtocol = PhotoDownloadService()) {
+    public init(downloadService: PhotoDownloadServiceProtocol = PhotoDownloadService()) {
         self.downloadService = downloadService
     }
     
     
     // MARK: Action
     
-    func downloadPhotos(isFallBack: Bool = false) {
+    public func downloadPhotos(isFallBack: Bool = false) {
         downloadService.downloadPhotos(with: "Spider")
             .subscribeOn(scheduler)
             .observeOn(MainScheduler.instance)
@@ -57,7 +57,7 @@ final class PhotoGridViewModel {
     
     // MARK: - Helper
     
-    func initialItemSize(for viewWidth: CGFloat) -> CGSize {
+    public func initialItemSize(for viewWidth: CGFloat) -> CGSize {
         guard viewWidth > 0 else { return CGSize.zero }
         
         let overallItemSize = Constants.minItemWidth + LayoutConstants.defaultPadding
@@ -71,11 +71,11 @@ final class PhotoGridViewModel {
     
     // MARK: - Datasource
     
-    func numberOfPhotos(at section: Int) -> Int {
+    public func numberOfPhotos(at section: Int) -> Int {
         return photosRelay.value.count
     }
     
-    func photoObject(at indexPath: IndexPath) -> Photo? {
+    public func photoObject(at indexPath: IndexPath) -> Photo? {
         return photosRelay.value[safe: indexPath.item]
     }
     
