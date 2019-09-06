@@ -24,7 +24,7 @@ public final class PhotoDownloadService: PhotoDownloadServiceProtocol {
         return Single.create { [weak self] observer in
             guard let self = self else { return  Disposables.create() }
             
-            self.loader.load(URL.baseEndpoint, ignoreCache: true, json: urlQuery, timeoutInterval: 5.0) { result in
+            self.loader.get(URL.baseEndpoint, ignoreCache: true, json: urlQuery, timeoutInterval: 5.0) { result in
                 switch result {
                 case .success(let data):
                     print("\(String(describing: String(data: data, encoding: .utf8)))")
