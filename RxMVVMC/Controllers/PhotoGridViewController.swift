@@ -66,7 +66,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     // MARK: - Setups
     
     private func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .black
         self.title = "Leopard"
     }
     

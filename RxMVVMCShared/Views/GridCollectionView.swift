@@ -30,7 +30,7 @@ public class GridCollectionView: UICollectionView {
     // MARK: - Setups
     
     private func setup() {
-        backgroundColor = .white
+        backgroundColor = .black
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         contentInset = UIEdgeInsets(inset: LayoutConstants.defaultPadding)

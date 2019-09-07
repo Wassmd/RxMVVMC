@@ -23,7 +23,7 @@ public class PhotoGridCell: UICollectionViewCell {
     
     let titleLabel: UILabel = {
         let titleLabel = UILabel()
-        titleLabel.tintColor = .black
+        titleLabel.textColor = .gray
         titleLabel.text = "Kittens"
         titleLabel.font = Constants.titleLabelFont
         titleLabel.textAlignment = .center

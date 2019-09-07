@@ -37,6 +37,7 @@
 		5F3B34B12322258900EF69F2 /* ResuableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C00522A54D5A00F17764 /* ResuableView.swift */; };
 		5F3B34B22322258900EF69F2 /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C00622A54D5A00F17764 /* Coordinatable.swift */; };
 		5F511B842323055000AE415E /* EndPointLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F511B832323055000AE415E /* EndPointLoader.framework */; };
+		5F5481802323FA68000A38B0 /* UIColor+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54817F2323FA68000A38B0 /* UIColor+Constants.swift */; };
 		5FC6BFDF22A54B8800F17764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */; };
 		5FC6BFF422A54B8800F17764 /* RxMVVMCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFF322A54B8800F17764 /* RxMVVMCTests.swift */; };
 		5FC6C02D22A54D5B00F17764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6C00822A54D5A00F17764 /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 		5F34496523219EC00080AA99 /* RxMVVMSharedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMVVMSharedTests.swift; sourceTree = "<group>"; };
 		5F34496723219EC00080AA99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F511B832323055000AE415E /* EndPointLoader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EndPointLoader.framework; path = Carthage/Build/iOS/EndPointLoader.framework; sourceTree = "<group>"; };
+		5F54817F2323FA68000A38B0 /* UIColor+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Constants.swift"; sourceTree = "<group>"; };
 		5FC6BFDB22A54B8700F17764 /* RxMVVMC-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxMVVMC-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FC6BFEA22A54B8800F17764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -215,7 +217,7 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		5F34495723219EC00080AA99 /* RxMVVMShared */ = {
+		5F34495723219EC00080AA99 /* RxMVVMCShared */ = {
 			isa = PBXGroup;
 			children = (
 				5FC6C00B22A54D5A00F17764 /* ViewModel */,
@@ -228,16 +230,16 @@
 				5F34495823219EC00080AA99 /* RxMVVMShared.h */,
 				5F34495923219EC00080AA99 /* Info.plist */,
 			);
-			path = RxMVVMShared;
+			path = RxMVVMCShared;
 			sourceTree = "<group>";
 		};
-		5F34496423219EC00080AA99 /* RxMVVMSharedTests */ = {
+		5F34496423219EC00080AA99 /* RxMVVMCSharedTests */ = {
 			isa = PBXGroup;
 			children = (
 				5F34496523219EC00080AA99 /* RxMVVMSharedTests.swift */,
 				5F34496723219EC00080AA99 /* Info.plist */,
 			);
-			path = RxMVVMSharedTests;
+			path = RxMVVMCSharedTests;
 			sourceTree = "<group>";
 		};
 		5FC6BFD222A54B8700F17764 = {
@@ -245,8 +247,8 @@
 			children = (
 				5FC6BFDD22A54B8700F17764 /* RxMVVMC */,
 				5FC6BFF222A54B8800F17764 /* RxMVVMCTests */,
-				5F34495723219EC00080AA99 /* RxMVVMShared */,
-				5F34496423219EC00080AA99 /* RxMVVMSharedTests */,
+				5F34495723219EC00080AA99 /* RxMVVMCShared */,
+				5F34496423219EC00080AA99 /* RxMVVMCSharedTests */,
 				5FC6BFDC22A54B8700F17764 /* Products */,
 				5F0DB864231F03340021B883 /* Frameworks */,
 			);
@@ -351,6 +353,7 @@
 		5FC6C01222A54D5A00F17764 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				5F54817F2323FA68000A38B0 /* UIColor+Constants.swift */,
 				5FC6C01322A54D5A00F17764 /* UIView+Layout.swift */,
 				5FC6C01422A54D5A00F17764 /* UIAlertController+ErrorAlert.swift */,
 			);
@@ -687,6 +690,7 @@
 				5F3B34A32321ACBE00EF69F2 /* UIEdgeInsets+AllEdges.swift in Sources */,
 				5F3B34A42321ACBE00EF69F2 /* UIView+Layout.swift in Sources */,
 				5F3B34A52321ACBE00EF69F2 /* UIAlertController+ErrorAlert.swift in Sources */,
+				5F5481802323FA68000A38B0 /* UIColor+Constants.swift in Sources */,
 				5F3B34A62321ACBE00EF69F2 /* URL+Endpoints.swift in Sources */,
 				5F3B34A72321ACBE00EF69F2 /* Optional+Generic.swift in Sources */,
 				5F3B34A82321ACBE00EF69F2 /* Array+Generic.swift in Sources */,
@@ -766,7 +770,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = RxMVVMShared/Info.plist;
+				INFOPLIST_FILE = RxMVVMCShared/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -774,7 +778,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.grandcentrix.RxMVVMShared;
+				PRODUCT_BUNDLE_IDENTIFIER = net.grandcentrix.RxMVVMCShared;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -799,7 +803,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = RxMVVMShared/Info.plist;
+				INFOPLIST_FILE = RxMVVMCShared/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -807,7 +811,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.grandcentrix.RxMVVMShared;
+				PRODUCT_BUNDLE_IDENTIFIER = net.grandcentrix.RxMVVMCShared;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
