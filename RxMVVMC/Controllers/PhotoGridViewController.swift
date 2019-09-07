@@ -82,7 +82,9 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     private func setupConstraints() {
         collectionView.pinEdges(to: view)
-        loadingView.placeInCenter(of: view)
+        loadingView.pinSize(to: CGSize(square: 80))
+        loadingView.centerVertically(to: view)
+        loadingView.centerHorizontally(to: view)
     }
     
     
@@ -127,9 +129,8 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
         guard let cell = rawCell as? PhotoGridCell
             else { return rawCell }
         
-        if let photo = viewModel.photoObject(at: indexPath) {
-            cell.configureCell(with: photo)
-        }
+        cell.photo = viewModel.photoObject(at: indexPath)
+       
         return cell
     }
     
@@ -141,7 +142,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     
-    // MARK: Helper
+    // MARK: - Helpers
     
     private func handleCollectionViewDidSelectCell(at indexPath: IndexPath) {
         if let photoObject = viewModel.photoObject(at: indexPath) {

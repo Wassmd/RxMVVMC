@@ -15,12 +15,12 @@ public class LoadingView: UIView {
     // MARK: - Properties
     // MARK: Immutable
     
-    private let loadingIndicator = UIActivityIndicatorView(style: .gray)
+    private let loadingIndicator = UIActivityIndicatorView(style: .white)
     private let loadingLabel: UILabel = {
         let label = UILabel()
         label.text = "Loading..."
         label.font =  UIFont.boldSystemFont(ofSize: 15)
-        label.textColor = .gray
+        label.textColor = .white
         label.textAlignment = .center
         return label
     }()
@@ -56,17 +56,11 @@ public class LoadingView: UIView {
     }
     
     private func setupSubViews() {
-        self.addSubview(loadingStackView)
+        addSubview(loadingStackView)
     }
     
     private func setupConstraints() {
-        loadingStackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        loadingStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        loadingStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        loadingStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        
-        widthAnchor.constraint(equalToConstant: Constants.loadingViewWidth).isActive = true
-        heightAnchor.constraint(equalToConstant: Constants.loadingViewHeight).isActive = true
+        loadingStackView.pinEdges(to: self)
     }
     
     

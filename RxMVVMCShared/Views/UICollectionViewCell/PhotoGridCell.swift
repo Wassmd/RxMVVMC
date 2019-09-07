@@ -8,8 +8,9 @@ public class PhotoGridCell: UICollectionViewCell {
     private enum Constants {
         static let titleLabelTopOffset: CGFloat = 8
         static let titleLabelFont = UIFont.boldSystemFont(ofSize: 24)
-        static let imageContainerHeight: CGFloat = 160
         static let imageViewTopOffset: CGFloat = 7
+        static let cornerRadius: CGFloat = 16
+        static let titleLabelHeight: CGFloat = 20
     }
     
     // MARK: - Properties
@@ -29,14 +30,22 @@ public class PhotoGridCell: UICollectionViewCell {
         titleLabel.textAlignment = .center
         return titleLabel
     }()
+        
+    // MARK: - Mutable
     
-    let imageContainer = ViewCreator.createImageContaionerWithBoarder()
+    public var photo: Photo? {
+        didSet {
+            configureCell(with: photo)
+        }
+    }
+    
     
     // MARK: - Initializers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setup()
         setupSubViews()
         setupConstraints()
     }
@@ -55,32 +64,34 @@ public class PhotoGridCell: UICollectionViewCell {
     
     // MARK: - Setups
     
+    private func setup() {
+        imageView.layer.cornerRadius = Constants.cornerRadius
+        imageView.layer.masksToBounds = true
+    }
+    
     private func setupSubViews() {
-        contentView.addSubview(imageContainer)
-        contentView.addSubview(imageView)
-        contentView.addSubview(titleLabel)
+        [imageView, titleLabel].forEach(contentView.addSubview(_:))
     }
   
     private func setupConstraints() {
-        imageContainer.pinLeadingAndTrailingEdges(to: contentView)
-        imageContainer.topEdge(to: contentView)
-        imageContainer.pinHeight(to: Constants.imageContainerHeight)
-        
-        imageView.pinTopAndBottomEdge(to: imageContainer, withOffset: Constants.imageViewTopOffset)
-        imageView.pinLeadingAndTrailingEdges(to: imageContainer, withOffset: Constants.imageViewTopOffset)
+        imageView.pinLeadingAndTrailingEdges(to: contentView)
+        imageView.topEdge(to: contentView)
+        imageView.pinBottomEdgeToTop(of: titleLabel, withOffset: -Constants.titleLabelTopOffset)
         
         titleLabel.pinLeadingAndTrailingEdges(to: contentView)
-        titleLabel.pinTopEdgeToBottom(of: imageContainer, withOffset: Constants.titleLabelTopOffset)
         titleLabel.pinBottomEdge(lessThanOrEqualTo: contentView)
+        titleLabel.pinHeight(to: Constants.titleLabelHeight)
     }
     
     
     // MARK: - Helper
     
-    public func configureCell(with photo: Photo) {
+    public func configureCell(with photo: Photo?) {
+        guard let photo = photo else { return }
         titleLabel.text = photo.title
         
-        let url = URL(string: photo.photoUrl)
-        imageView.kf.setImage(with: url)
+        if let url = URL(string: photo.photoUrl) {
+            imageView.kf.setImage(with: url)
+        }
     }
 }

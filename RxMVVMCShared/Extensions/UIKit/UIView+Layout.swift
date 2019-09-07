@@ -62,6 +62,11 @@ public extension UIView {
         return bottomAnchor.constraint(lessThanOrEqualTo: layoutElement.bottomAnchor, constant: offset).activate()
     }
     
+    @discardableResult func pinBottomEdgeToTop(of layoutElement: LayoutAnchorable, withOffset offset: CGFloat = 0) -> NSLayoutConstraint {
+        setConstraintTranslationToFalse()
+        return bottomAnchor.constraint(equalTo: layoutElement.topAnchor, constant: offset).activate()
+    }
+    
     @discardableResult func pinTopAndBottomEdge(to layoutElement: LayoutAnchorable, withOffset offset: CGFloat = 0) -> [NSLayoutConstraint] {
         setConstraintTranslationToFalse()
         return [
