@@ -3,7 +3,7 @@ import RxSwift
 import RxMVVMShared
 
 protocol PhotoGridViewControllerDelegate: AnyObject {
-    func showDetail(with photo: Photo)
+    func showDetail(with currentPhoto: Photo, photos: [Photo])
     func showErrorAlert(with message: String)
 }
 
@@ -82,6 +82,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     private func setupConstraints() {
         collectionView.pinEdges(to: view)
+        
         loadingView.pinSize(to: CGSize(square: 80))
         loadingView.centerVertically(to: view)
         loadingView.centerHorizontally(to: view)
@@ -146,7 +147,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     private func handleCollectionViewDidSelectCell(at indexPath: IndexPath) {
         if let photoObject = viewModel.photoObject(at: indexPath) {
-            coordinatorDelegate?.showDetail(with: photoObject)
+            coordinatorDelegate?.showDetail(with: photoObject, photos: viewModel.allPhoto)
         }
     }
     

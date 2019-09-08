@@ -11,7 +11,7 @@ public final class PhotoGridViewModel {
         static let minItemWidth: CGFloat = 200
     }
     
-    // MARK: Properties
+    // MARK: - Properties
     // MARK: Immutables
     
     private let disposeBag = DisposeBag()
@@ -77,6 +77,10 @@ public final class PhotoGridViewModel {
     
     public func photoObject(at indexPath: IndexPath) -> Photo? {
         return photosRelay.value[safe: indexPath.item]
+    }
+    
+    public var allPhoto: [Photo] {
+        return photosRelay.value
     }
     
     
