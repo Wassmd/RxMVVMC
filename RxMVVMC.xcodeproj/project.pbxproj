@@ -39,12 +39,13 @@
 		5F511B842323055000AE415E /* EndPointLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F511B832323055000AE415E /* EndPointLoader.framework */; };
 		5F5481802323FA68000A38B0 /* UIColor+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54817F2323FA68000A38B0 /* UIColor+Constants.swift */; };
 		5F54818323244391000A38B0 /* DetailCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54818123244384000A38B0 /* DetailCollectionView.swift */; };
-		5F54818723244499000A38B0 /* HorizontalDetailCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54818623244499000A38B0 /* HorizontalDetailCollectionViewLayout.swift */; };
+		5F54818723244499000A38B0 /* DetailCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54818623244499000A38B0 /* DetailCollectionViewLayout.swift */; };
 		5F5481892324480A000A38B0 /* PhotoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5481882324480A000A38B0 /* PhotoDetailCell.swift */; };
 		5F54818C23244E9D000A38B0 /* PhotoViewerScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54818B23244E9D000A38B0 /* PhotoViewerScrollView.swift */; };
 		5F54818E2324579C000A38B0 /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54818D2324579B000A38B0 /* PhotoDetailViewModel.swift */; };
 		5F54819023246338000A38B0 /* UICollectionView+Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54818F23246338000A38B0 /* UICollectionView+Generic.swift */; };
 		5F54819223246400000A38B0 /* Optional+Required.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54819123246400000A38B0 /* Optional+Required.swift */; };
+		5F7A6D9323258CF9008FC28C /* ZoomCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A6D9123258A7F008FC28C /* ZoomCalculator.swift */; };
 		5FC6BFDF22A54B8800F17764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */; };
 		5FC6BFF422A54B8800F17764 /* RxMVVMCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFF322A54B8800F17764 /* RxMVVMCTests.swift */; };
 		5FC6C02D22A54D5B00F17764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6C00822A54D5A00F17764 /* Assets.xcassets */; };
@@ -122,12 +123,13 @@
 		5F511B832323055000AE415E /* EndPointLoader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EndPointLoader.framework; path = Carthage/Build/iOS/EndPointLoader.framework; sourceTree = "<group>"; };
 		5F54817F2323FA68000A38B0 /* UIColor+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Constants.swift"; sourceTree = "<group>"; };
 		5F54818123244384000A38B0 /* DetailCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionView.swift; sourceTree = "<group>"; };
-		5F54818623244499000A38B0 /* HorizontalDetailCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDetailCollectionViewLayout.swift; sourceTree = "<group>"; };
+		5F54818623244499000A38B0 /* DetailCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewLayout.swift; sourceTree = "<group>"; };
 		5F5481882324480A000A38B0 /* PhotoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailCell.swift; sourceTree = "<group>"; };
 		5F54818B23244E9D000A38B0 /* PhotoViewerScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerScrollView.swift; sourceTree = "<group>"; };
 		5F54818D2324579B000A38B0 /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
 		5F54818F23246338000A38B0 /* UICollectionView+Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Generic.swift"; sourceTree = "<group>"; };
 		5F54819123246400000A38B0 /* Optional+Required.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Required.swift"; sourceTree = "<group>"; };
+		5F7A6D9123258A7F008FC28C /* ZoomCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomCalculator.swift; sourceTree = "<group>"; };
 		5FC6BFDB22A54B8700F17764 /* RxMVVMC-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxMVVMC-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FC6BFEA22A54B8800F17764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -259,7 +261,7 @@
 		5F5481842324444F000A38B0 /* FlowLayout */ = {
 			isa = PBXGroup;
 			children = (
-				5F54818623244499000A38B0 /* HorizontalDetailCollectionViewLayout.swift */,
+				5F54818623244499000A38B0 /* DetailCollectionViewLayout.swift */,
 			);
 			path = FlowLayout;
 			sourceTree = "<group>";
@@ -283,7 +285,6 @@
 		5FC6BFD222A54B8700F17764 = {
 			isa = PBXGroup;
 			children = (
-				5F54818B23244E9D000A38B0 /* PhotoViewerScrollView.swift */,
 				5FC6BFDD22A54B8700F17764 /* RxMVVMC */,
 				5FC6BFF222A54B8800F17764 /* RxMVVMCTests */,
 				5F34495723219EC00080AA99 /* RxMVVMCShared */,
@@ -338,6 +339,7 @@
 			children = (
 				5FC6C00222A54D5A00F17764 /* LayoutConstants.swift */,
 				5FC6C00322A54D5A00F17764 /* ViewCreator.swift */,
+				5F7A6D9123258A7F008FC28C /* ZoomCalculator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -453,6 +455,7 @@
 				5F151444231FA6D800EEE9ED /* Custom */,
 				5FC6C02622A54D5B00F17764 /* CollectionViewCell */,
 				5F54818A23244E6D000A38B0 /* ScrollView */,
+				5F54818B23244E9D000A38B0 /* PhotoViewerScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -732,7 +735,7 @@
 				5F3B34B12322258900EF69F2 /* ResuableView.swift in Sources */,
 				5F54818E2324579C000A38B0 /* PhotoDetailViewModel.swift in Sources */,
 				5F3B34B22322258900EF69F2 /* Coordinatable.swift in Sources */,
-				5F54818723244499000A38B0 /* HorizontalDetailCollectionViewLayout.swift in Sources */,
+				5F54818723244499000A38B0 /* DetailCollectionViewLayout.swift in Sources */,
 				5F3B34AB2321AE5300EF69F2 /* LayoutConstants.swift in Sources */,
 				5F3B34AC2321AE5300EF69F2 /* ViewCreator.swift in Sources */,
 				5F3B34A32321ACBE00EF69F2 /* UIEdgeInsets+AllEdges.swift in Sources */,
@@ -743,6 +746,7 @@
 				5F54819223246400000A38B0 /* Optional+Required.swift in Sources */,
 				5F3B34A72321ACBE00EF69F2 /* Optional+Generic.swift in Sources */,
 				5F5481892324480A000A38B0 /* PhotoDetailCell.swift in Sources */,
+				5F7A6D9323258CF9008FC28C /* ZoomCalculator.swift in Sources */,
 				5F3B34A82321ACBE00EF69F2 /* Array+Generic.swift in Sources */,
 				5F54819023246338000A38B0 /* UICollectionView+Generic.swift in Sources */,
 				5F3B34A92321ACBE00EF69F2 /* CGSize+AllDimensions.swift in Sources */,
@@ -1054,7 +1058,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "grandcentrix Enterprise Wildcard Development";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1081,7 +1085,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

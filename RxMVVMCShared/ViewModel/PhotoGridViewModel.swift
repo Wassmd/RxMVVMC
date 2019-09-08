@@ -43,7 +43,7 @@ public final class PhotoGridViewModel {
     // MARK: Action
     
     public func downloadPhotos(isFallBack: Bool = false) {
-        downloadService.downloadPhotos(with: "Spider")
+        downloadService.downloadPhotos(with: "Sunflower")
             .subscribeOn(scheduler)
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] in

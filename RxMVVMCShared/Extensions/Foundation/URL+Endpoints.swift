@@ -11,6 +11,8 @@ private enum Constants {
     static let json = "json"
     static let nojsoncallbackKey = "nojsoncallback"
     static let nojsoncallbackValue = "1"
+    static let safeSearchKey = "safe_search"
+    static let safeSearchValue = "1"
 }
 
 extension URL {
@@ -22,6 +24,7 @@ extension URL {
                 Constants.apiKey: Constants.apiKeyValue,
                 Constants.contentTypeKey: Constants.json,
                 Constants.formatKey: Constants.json,
+                Constants.safeSearchKey: Constants.safeSearchValue,
                 Constants.nojsoncallbackKey: Constants.nojsoncallbackValue]
     }
 }
