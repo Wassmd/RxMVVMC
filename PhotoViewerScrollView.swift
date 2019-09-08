@@ -4,9 +4,10 @@ class PhotoViewerScrollView: UIScrollView, UIScrollViewDelegate {
     
     let imageView: UIImageView = {
         let imageView = UIImageView(image: nil)
-        imageView.contentMode = .scaleAspectFit
+//        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
+    
     
     // MARK: - Initializers
     

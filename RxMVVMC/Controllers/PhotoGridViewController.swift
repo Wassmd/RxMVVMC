@@ -3,7 +3,7 @@ import RxSwift
 import RxMVVMShared
 
 protocol PhotoGridViewControllerDelegate: AnyObject {
-    func showDetail(with currentPhoto: Photo, photos: [Photo])
+    func showDetail(at indexPath: IndexPath, photos: [Photo])
     func showErrorAlert(with message: String)
 }
 
@@ -146,9 +146,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     // MARK: - Helpers
     
     private func handleCollectionViewDidSelectCell(at indexPath: IndexPath) {
-        if let photoObject = viewModel.photoObject(at: indexPath) {
-            coordinatorDelegate?.showDetail(with: photoObject, photos: viewModel.allPhoto)
-        }
+        coordinatorDelegate?.showDetail(at: indexPath, photos: viewModel.allPhoto)
     }
     
     private func hideLoadingView() {

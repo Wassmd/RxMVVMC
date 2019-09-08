@@ -3,11 +3,23 @@ import UIKit
 public class DetailCollectionView: UICollectionView {
     
     
+    // MARK: - Properties
+    // MARK: Immutable
     
+    
+    // MARK: Mutable
+    
+    var itemSize: CGSize {
+        return (collectionViewLayout as? DetailCollectionViewLayout)?.elementSize ?? .zero
+    }
+    
+     // MARK: - Initializers
     
     public init(frame: CGRect = .zero,
-         collectionViewLayout: HorizontalDetailCollectionViewLayout = HorizontalDetailCollectionViewLayout()) {
+         collectionViewLayout: DetailCollectionViewLayout = DetailCollectionViewLayout()) {
         super.init(frame: frame, collectionViewLayout: collectionViewLayout)
+        
+        setup()
     }
     
     public required init?(coder aDecoder: NSCoder) {

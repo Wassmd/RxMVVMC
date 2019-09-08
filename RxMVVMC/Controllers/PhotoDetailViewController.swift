@@ -6,15 +6,6 @@ class PhotoDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     
     
     // MARK: - Properties
-    // MARK: Constants
-    
-    private enum Constants {
-        static let imageContainerLeadingAndTrailing: CGFloat = 100
-         static let boarderWidth: CGFloat = 100
-    }
-    
-    
-    // MARK: - Properties
     // MARK: Immutable
     
     private let viewModel: PhotoDetailViewModel
@@ -50,11 +41,16 @@ class PhotoDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         setupConstraints()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        collectionView.scrollToItem(at: viewModel.currenIndexPath, at: .centeredHorizontally, animated: false)
+    }
     
     // MARK: - Setups
     
     private func setupView() {
-        title = viewModel.currentPhoto.title
+        title = viewModel.photo(at: viewModel.currenIndexPath)?.title
         view.backgroundColor = .black
     }
     
@@ -63,7 +59,7 @@ class PhotoDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     private func setupConstraints() {
-        collectionView.pinEdges(to: view)
+        collectionView.pinEdges(to: view.safeAreaLayoutGuide)
     }
     
     
@@ -76,8 +72,10 @@ class PhotoDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PhotoDetailCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-        cell.photo = viewModel.photos[indexPath.row]
+        let photo = viewModel.photos[indexPath.row]
+        title = photo.title
+        cell.photo = photo
+        
         return cell
     }
-    
 }

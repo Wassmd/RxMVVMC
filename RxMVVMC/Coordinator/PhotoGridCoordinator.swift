@@ -2,7 +2,7 @@ import UIKit
 import RxMVVMShared
 
 private enum PhotoGridSteps: CoordinateTo {
-    case showDetail(currentPhoto: Photo, photos: [Photo])
+    case showDetail(indexPath: IndexPath, photos: [Photo])
     case showAlert(String)
 }
 
@@ -53,8 +53,8 @@ class PhotoGridCoordinator: Coordinatable {
             return
         }
         switch step {
-        case .showDetail(let currentPhoto, let photos):
-            showPhotoDetail(with: currentPhoto, photos: photos)
+        case .showDetail(let indexPath, let photos):
+            showPhotoDetail(at: indexPath, photos: photos)
         case .showAlert(let message):
             showRequestResponseErrorAlert(with: message)
         }
@@ -71,8 +71,8 @@ class PhotoGridCoordinator: Coordinatable {
     
     // MARK: - Transitions
     
-    private func showPhotoDetail(with currentPhoto: Photo, photos: [Photo]) {
-        let viewModel = PhotoDetailViewModel(with: currentPhoto, photos: photos)
+    private func showPhotoDetail(at indexPath: IndexPath, photos: [Photo]) {
+        let viewModel = PhotoDetailViewModel(with: indexPath, photos: photos)
         let controller = PhotoDetailViewController(viewModel: viewModel)
         navigationController.pushViewController(controller, animated: true)
     }
@@ -87,7 +87,7 @@ extension PhotoGridCoordinator: PhotoGridViewControllerDelegate {
         coordinate(to: PhotoGridSteps.showAlert(message))
     }
     
-    func showDetail(with currentPhoto: Photo, photos: [Photo]) {
-        coordinate(to: PhotoGridSteps.showDetail(currentPhoto: currentPhoto, photos: photos))
+    func showDetail(at indexPath: IndexPath, photos: [Photo]) {
+        coordinate(to: PhotoGridSteps.showDetail(indexPath: indexPath, photos: photos))
     }
 }
