@@ -54,6 +54,8 @@
 		5FC6C03922A54D5B00F17764 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C01D22A54D5B00F17764 /* AppCoordinator.swift */; };
 		5FC6C03A22A54D5B00F17764 /* PhotoGridCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C01E22A54D5B00F17764 /* PhotoGridCoordinator.swift */; };
 		5FC6C04022A54E8900F17764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6C03F22A54E8900F17764 /* LaunchScreen.storyboard */; };
+		5FFA894323269AB700C44406 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA89412326985F00C44406 /* Logger.swift */; };
+		5FFA894523269CA200C44406 /* Error+LocalizedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA894423269CA200C44406 /* Error+LocalizedMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +159,8 @@
 		5FC6C02522A54D5B00F17764 /* GridCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionView.swift; sourceTree = "<group>"; };
 		5FC6C02722A54D5B00F17764 /* PhotoGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridCell.swift; sourceTree = "<group>"; };
 		5FC6C03F22A54E8900F17764 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5FFA89412326985F00C44406 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		5FFA894423269CA200C44406 /* Error+LocalizedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+LocalizedMessage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +344,7 @@
 				5FC6C00222A54D5A00F17764 /* LayoutConstants.swift */,
 				5FC6C00322A54D5A00F17764 /* ViewCreator.swift */,
 				5F7A6D9123258A7F008FC28C /* ZoomCalculator.swift */,
+				5FFA89412326985F00C44406 /* Logger.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				5FC6C01622A54D5A00F17764 /* Optional+Generic.swift */,
 				5FC6C01722A54D5A00F17764 /* Array+Generic.swift */,
 				5F54819123246400000A38B0 /* Optional+Required.swift */,
+				5FFA894423269CA200C44406 /* Error+LocalizedMessage.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -738,12 +744,14 @@
 				5F54818723244499000A38B0 /* DetailCollectionViewLayout.swift in Sources */,
 				5F3B34AB2321AE5300EF69F2 /* LayoutConstants.swift in Sources */,
 				5F3B34AC2321AE5300EF69F2 /* ViewCreator.swift in Sources */,
+				5FFA894323269AB700C44406 /* Logger.swift in Sources */,
 				5F3B34A32321ACBE00EF69F2 /* UIEdgeInsets+AllEdges.swift in Sources */,
 				5F3B34A42321ACBE00EF69F2 /* UIView+Layout.swift in Sources */,
 				5F3B34A52321ACBE00EF69F2 /* UIAlertController+ErrorAlert.swift in Sources */,
 				5F5481802323FA68000A38B0 /* UIColor+Constants.swift in Sources */,
 				5F3B34A62321ACBE00EF69F2 /* URL+Endpoints.swift in Sources */,
 				5F54819223246400000A38B0 /* Optional+Required.swift in Sources */,
+				5FFA894523269CA200C44406 /* Error+LocalizedMessage.swift in Sources */,
 				5F3B34A72321ACBE00EF69F2 /* Optional+Generic.swift in Sources */,
 				5F5481892324480A000A38B0 /* PhotoDetailCell.swift in Sources */,
 				5F7A6D9323258CF9008FC28C /* ZoomCalculator.swift in Sources */,

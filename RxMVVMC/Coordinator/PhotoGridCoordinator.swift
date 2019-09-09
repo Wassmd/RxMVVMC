@@ -78,7 +78,7 @@ class PhotoGridCoordinator: Coordinatable {
     }
     
     private func showRequestResponseErrorAlert(with message: String) {
-        UIAlertController.showErrorAlert(message: "The connection to server failed \n \(message)", presentedBy: self.photoGridViewController)
+        UIAlertController.showErrorAlert(message: message, presentedBy: self.photoGridViewController)
     }
 }
 

@@ -16,14 +16,14 @@ public final class PhotoGridViewModel {
     
     private let disposeBag = DisposeBag()
     private let photosRelay = BehaviorRelay<[Photo]>(value: [])
-    private let errorRelay = PublishRelay<Error>()
+    private let errorRelay = PublishRelay<String>()
     
     private let downloadService: PhotoDownloadServiceProtocol
     
     public var photosRelayObserver: Observable<[Photo]> {
         return photosRelay.skip(1).asObservable()
     }
-    public var errorRelayObserver: Observable<Error> {
+    public var errorRelayObserver: Observable<String> {
         return errorRelay.asObservable()
     }
     
@@ -55,20 +55,6 @@ public final class PhotoGridViewModel {
     }
     
     
-    // MARK: - Helper
-    
-    public func initialItemSize(for viewWidth: CGFloat) -> CGSize {
-        guard viewWidth > 0 else { return CGSize.zero }
-        
-        let overallItemSize = Constants.minItemWidth + LayoutConstants.defaultPadding
-        let numberofItemsPerRow = Int(viewWidth / overallItemSize)
-        let paddingSum = CGFloat(numberofItemsPerRow + 1) * LayoutConstants.defaultPadding
-        let itemWidth = (viewWidth - paddingSum) / CGFloat(numberofItemsPerRow)
-        
-        return CGSize(square: itemWidth)
-    }
-    
-    
     // MARK: - Datasource
     
     public func numberOfPhotos(at section: Int) -> Int {
@@ -87,6 +73,17 @@ public final class PhotoGridViewModel {
     // MARK: - Helpers
     
     func handleError(error: Error) {
-        errorRelay.accept(error)
+        errorRelay.accept(error.localizedDescription)
+    }
+    
+    public func initialItemSize(for viewWidth: CGFloat) -> CGSize {
+        guard viewWidth > 0 else { return CGSize.zero }
+        
+        let overallItemSize = Constants.minItemWidth + LayoutConstants.defaultPadding
+        let numberofItemsPerRow = Int(viewWidth / overallItemSize)
+        let paddingSum = CGFloat(numberofItemsPerRow + 1) * LayoutConstants.defaultPadding
+        let itemWidth = (viewWidth - paddingSum) / CGFloat(numberofItemsPerRow)
+        
+        return CGSize(square: itemWidth)
     }
 }

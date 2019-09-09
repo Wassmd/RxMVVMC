@@ -11,9 +11,7 @@ class PhotoViewerScrollView: UIScrollView, UIScrollViewDelegate {
     
     override var bounds: CGRect {
         didSet {
-            print("didSet bounds:\(bounds)")
-            print("didSet imageView:\(imageView)")
-            updateMinZoomScale()
+            alignImage()
         }
     }
     
@@ -69,7 +67,7 @@ class PhotoViewerScrollView: UIScrollView, UIScrollViewDelegate {
         updateSizeToFit()
         alignInsets()
         
-        setZoomScale(rect: visibleRect(), scale: zoomScale, oldMinimumScale: minimumZoomScale)
+        setZoomScale()
     }
     
     private func updateSizeToFit() {
@@ -83,11 +81,8 @@ class PhotoViewerScrollView: UIScrollView, UIScrollViewDelegate {
         )
     }
     
-    private func setZoomScale(rect: CGRect, scale: CGFloat, oldMinimumScale: CGFloat) {
+    private func setZoomScale() {
         setZoomScale(minimumZoomScale, animated: false)
-//        if let transform = ZoomScaleCalculator.transform(rect: rect, scale: scale, by: minimumZoomScale / oldMinimumScale) {
-//            setZoomScale(transform.newScale, animated: false)
-//        }
     }
     
     func alignInsets() {
@@ -105,11 +100,5 @@ class PhotoViewerScrollView: UIScrollView, UIScrollViewDelegate {
         
         // Center the image on screen
         contentInset = UIEdgeInsets(top: verticalPadding, left: horizontalPadding, bottom: verticalPadding, right: horizontalPadding)
-    }
-    
-    func visibleRect() -> CGRect {
-        print("visibleRect bounds:\(bounds)")
-        print("visibleRect imageView:\(imageView)")
-        return convert(bounds, to: imageView)
     }
 }
