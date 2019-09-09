@@ -10,7 +10,7 @@ final class ZoomScaleCalculator {
         return min(widthScale, heightScale)
     }
     
-    static func transform(rect: CGRect, scale: CGFloat, by factor: CGFloat) -> (newRect: CGRect, newScale: CGFloat)? {
+    static func transformToInitialZoom(rect: CGRect, scale: CGFloat, by factor: CGFloat) -> (newRect: CGRect, newScale: CGFloat)? {
         if factor.isNormal {
             var result: (newRect: CGRect, newScale: CGFloat)
             result.newRect = rect.applying(CGAffineTransform(scaleX: 1 / factor, y: 1 / factor))

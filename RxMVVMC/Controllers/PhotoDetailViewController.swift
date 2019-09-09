@@ -19,6 +19,7 @@ class PhotoDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         return collectionView
     }()
     
+    
     // MARK: - Initializers
     
     init(viewModel: PhotoDetailViewModel) {

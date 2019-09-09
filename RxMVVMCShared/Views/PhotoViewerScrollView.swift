@@ -11,7 +11,7 @@ class PhotoViewerScrollView: UIScrollView, UIScrollViewDelegate {
     
     override var bounds: CGRect {
         didSet {
-            alignImage()
+            alignImage() // need revisit
         }
     }
     
@@ -19,7 +19,8 @@ class PhotoViewerScrollView: UIScrollView, UIScrollViewDelegate {
     // MARK: - Initializers
     
     init() {
-        super.init(frame: CGRect.zero)
+        super.init(frame: .zero)
+        
         setupView()
         setupSubviews()
         setupConstraints()
@@ -57,35 +58,48 @@ class PhotoViewerScrollView: UIScrollView, UIScrollViewDelegate {
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        alignInsets()
+        alignScrollViewInsets()
     }
     
     
     // MARK: - API
     
     func alignImage() {
-        updateSizeToFit()
-        alignInsets()
-        
-        setZoomScale()
+        updateZoomScale()
+        alignScrollViewInsets()
     }
     
+    private func updateZoomScale() {
+        updateSizeToFit()
+        updateMinimumZoomScale()
+    
+        setZoomScale(rect: visibleRect(), scale: zoomScale, oldMinimumScale: minimumZoomScale)
+    }
+
     private func updateSizeToFit() {
         imageView.sizeToFit()
     }
     
-    private func updateMinZoomScale() {
+    private func updateMinimumZoomScale() {
         minimumZoomScale = ZoomScaleCalculator.calculateMinZoomScale(
             viewSize: bounds.size,
             imageSize: imageView.bounds.size
         )
     }
     
-    private func setZoomScale() {
-        setZoomScale(minimumZoomScale, animated: false)
+    func visibleRect() -> CGRect {
+        return convert(bounds, to: imageView)
     }
     
-    func alignInsets() {
+    private func setZoomScale(rect: CGRect, scale: CGFloat, oldMinimumScale: CGFloat) {
+        if let transform = ZoomScaleCalculator.transformToInitialZoom(rect: rect, scale: scale, by: minimumZoomScale / oldMinimumScale) {
+            setZoomScale(transform.newScale, animated: false)
+        } else {
+            setZoomScale(minimumZoomScale, animated: false)
+        }
+    }
+    
+    func alignScrollViewInsets() {
         let imageViewSize = imageView.frame.size
         let scrollViewSize = bounds.size
         
@@ -93,12 +107,10 @@ class PhotoViewerScrollView: UIScrollView, UIScrollViewDelegate {
         let horizontalPadding = imageViewSize.width < scrollViewSize.width ? (scrollViewSize.width - imageViewSize.width) / 2 : 0
         
         guard verticalPadding >= 0 else {
-            // Limit the image panning to the screen bounds
             contentSize = imageViewSize
             return
         }
         
-        // Center the image on screen
         contentInset = UIEdgeInsets(top: verticalPadding, left: horizontalPadding, bottom: verticalPadding, right: horizontalPadding)
     }
 }
