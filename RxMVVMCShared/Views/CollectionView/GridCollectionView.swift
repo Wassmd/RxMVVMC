@@ -2,14 +2,14 @@ import UIKit
 
 public class GridCollectionView: UICollectionView {
 
+    
     // MARK: - Properties
     // MARK: Immutable
     
     private let flowLayout = UICollectionViewFlowLayout()
     
-    
-//    // MARK: Mutable
-//
+    // MARK: Mutable
+
     var itemSize: CGSize {
         return flowLayout.itemSize
     }

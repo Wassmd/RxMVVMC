@@ -2,40 +2,30 @@ import UIKit
 import Kingfisher
 import RxMVVMShared
 
-class PhotoDetailViewController: UIViewController {
-
-
-    // MARK: - Properties
-    // MARK: Constants
-    
-    private enum Constants {
-        static let imageContainerLeadingAndTrailing: CGFloat = 100
-         static let boarderWidth: CGFloat = 100
-    }
+class PhotoDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     // MARK: - Properties
     // MARK: Immutable
     
-    private let photo: Photo
+    private let viewModel: PhotoDetailViewModel
     
-    let imageContainer = ViewCreator.createImageContaionerWithBoarder(borderWidth: 12)
-    
-    private let imageView: UIImageView = {
-       let imageView = UIImageView()
-        return imageView
+    private lazy var collectionView: DetailCollectionView = {
+        let collectionView = DetailCollectionView()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.registerReusableCell(PhotoDetailCell.self)
+        
+        return collectionView
     }()
     
     
     // MARK: - Initializers
     
-    init(photo: Photo) {
-        self.photo = photo
-        
+    init(viewModel: PhotoDetailViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -47,39 +37,46 @@ class PhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadImageURL()
         setupView()
         setupSubView()
         setupConstraints()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        collectionView.scrollToItem(at: viewModel.currenIndexPath, at: .centeredHorizontally, animated: false)
+    }
     
     // MARK: - Setups
     
     private func setupView() {
-        self.title = photo.title
-        view.backgroundColor = .white
+        title = viewModel.photo(at: viewModel.currenIndexPath)?.title
+        view.backgroundColor = .black
     }
     
     private func setupSubView() {
-        view.addSubview(imageContainer)
-        imageContainer.addSubview(imageView)
+        view.addSubview(collectionView)
     }
     
     private func setupConstraints() {
-        imageContainer.topEdge(to: view.safeAreaLayoutGuide)
-        imageContainer.bottomEdge(to: view)
-        imageContainer.pinLeadingAndTrailingEdges(to: view, withOffset: Constants.imageContainerLeadingAndTrailing)
-        
-        imageView.pinEdges(to: imageContainer)
+        collectionView.pinEdges(to: view.safeAreaLayoutGuide)
     }
     
     
-    // MARK: - Action
+    // MARK: - Protocol Conformance
+    // MARK: UICollectionViewDatasource
     
-    func loadImageURL() {
-        guard let imageURL = URL(string: photo.photoUrl) else { return }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.photos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: PhotoDetailCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+        let photo = viewModel.photos[indexPath.row]
+        title = photo.title
+        cell.photo = photo
         
-        imageView.kf.setImage(with: imageURL)
+        return cell
     }
 }

@@ -3,7 +3,7 @@ import RxSwift
 import RxMVVMShared
 
 protocol PhotoGridViewControllerDelegate: AnyObject {
-    func showDetail(with photo: Photo)
+    func showDetail(at indexPath: IndexPath, photos: [Photo])
     func showErrorAlert(with message: String)
 }
 
@@ -67,7 +67,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     private func setupView() {
         view.backgroundColor = .black
-        self.title = "Leopard"
+        title = "Leopard"
     }
     
     private func setupSubViews() {
@@ -82,6 +82,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     private func setupConstraints() {
         collectionView.pinEdges(to: view)
+        
         loadingView.pinSize(to: CGSize(square: 80))
         loadingView.centerVertically(to: view)
         loadingView.centerHorizontally(to: view)
@@ -101,9 +102,8 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
         viewModel.errorRelayObserver
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
-                self.coordinatorDelegate?.showErrorAlert(with: $0.localizedDescription)
+                self.coordinatorDelegate?.showErrorAlert(with: $0)
                 self.hideLoadingView()
-//                self.downloadKittensPhotoFallBack()
             })
             .disposed(by: disposeBag)
         
@@ -145,9 +145,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     // MARK: - Helpers
     
     private func handleCollectionViewDidSelectCell(at indexPath: IndexPath) {
-        if let photoObject = viewModel.photoObject(at: indexPath) {
-            coordinatorDelegate?.showDetail(with: photoObject)
-        }
+        coordinatorDelegate?.showDetail(at: indexPath, photos: viewModel.allPhoto)
     }
     
     private func hideLoadingView() {

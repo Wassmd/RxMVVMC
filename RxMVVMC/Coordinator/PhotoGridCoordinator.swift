@@ -2,7 +2,7 @@ import UIKit
 import RxMVVMShared
 
 private enum PhotoGridSteps: CoordinateTo {
-    case showDetail(Photo)
+    case showDetail(indexPath: IndexPath, photos: [Photo])
     case showAlert(String)
 }
 
@@ -53,8 +53,8 @@ class PhotoGridCoordinator: Coordinatable {
             return
         }
         switch step {
-        case .showDetail(let photo):
-            showPhotoDetail(with: photo)
+        case .showDetail(let indexPath, let photos):
+            showPhotoDetail(at: indexPath, photos: photos)
         case .showAlert(let message):
             showRequestResponseErrorAlert(with: message)
         }
@@ -71,13 +71,14 @@ class PhotoGridCoordinator: Coordinatable {
     
     // MARK: - Transitions
     
-    private func showPhotoDetail(with photo: Photo) {
-        let controller = PhotoDetailViewController(photo: photo)
+    private func showPhotoDetail(at indexPath: IndexPath, photos: [Photo]) {
+        let viewModel = PhotoDetailViewModel(with: indexPath, photos: photos)
+        let controller = PhotoDetailViewController(viewModel: viewModel)
         navigationController.pushViewController(controller, animated: true)
     }
     
     private func showRequestResponseErrorAlert(with message: String) {
-        UIAlertController.showErrorAlert(message: "The connection to server failed \n \(message)", presentedBy: self.photoGridViewController)
+        UIAlertController.showErrorAlert(message: message, presentedBy: self.photoGridViewController)
     }
 }
 
@@ -86,7 +87,7 @@ extension PhotoGridCoordinator: PhotoGridViewControllerDelegate {
         coordinate(to: PhotoGridSteps.showAlert(message))
     }
     
-    func showDetail(with photo: Photo) {
-        coordinate(to: PhotoGridSteps.showDetail(photo))
+    func showDetail(at indexPath: IndexPath, photos: [Photo]) {
+        coordinate(to: PhotoGridSteps.showDetail(indexPath: indexPath, photos: photos))
     }
 }
