@@ -27,17 +27,17 @@ public final class PhotoDownloadService: PhotoDownloadServiceProtocol {
             self.loader.get(URL.baseEndpoint, ignoreCache: true, json: urlQuery, timeoutInterval: 5.0) { result in
                 switch result {
                 case .success(let data):
-//                    print("\(String(describing: String(data: data, encoding: .utf8)))")
                     do {
                         let photoDetail = try self.jsonDecoder.decode(PhotosDetail.self, from: data)
-                        print("something........\(photoDetail.stat)")
+                        log.debug("status: \(photoDetail.stat)")
                         observer(.success(photoDetail.photos.photo))
                     } catch {
-                        print("error while creating models:\(error)")
+                        log.debug("error while creating models:\(error)")
                         observer(.error(error))
                     }
                 case .failure(let error):
-                    print(error)
+                    log.debug(error)
+                    observer(.error(error))
                 }
             }
             return Disposables.create()

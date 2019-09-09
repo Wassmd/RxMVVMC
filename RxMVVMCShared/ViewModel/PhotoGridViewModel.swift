@@ -11,19 +11,19 @@ public final class PhotoGridViewModel {
         static let minItemWidth: CGFloat = 200
     }
     
-    // MARK: Properties
+    // MARK: - Properties
     // MARK: Immutables
     
     private let disposeBag = DisposeBag()
     private let photosRelay = BehaviorRelay<[Photo]>(value: [])
-    private let errorRelay = PublishRelay<Error>()
+    private let errorRelay = PublishRelay<String>()
     
     private let downloadService: PhotoDownloadServiceProtocol
     
     public var photosRelayObserver: Observable<[Photo]> {
         return photosRelay.skip(1).asObservable()
     }
-    public var errorRelayObserver: Observable<Error> {
+    public var errorRelayObserver: Observable<String> {
         return errorRelay.asObservable()
     }
     
@@ -43,7 +43,7 @@ public final class PhotoGridViewModel {
     // MARK: Action
     
     public func downloadPhotos(isFallBack: Bool = false) {
-        downloadService.downloadPhotos(with: "Spider")
+        downloadService.downloadPhotos(with: "Sunflower")
             .subscribeOn(scheduler)
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] in
@@ -52,20 +52,6 @@ public final class PhotoGridViewModel {
                 
                 }, onError: { [weak self] in self?.handleError(error: $0) })
             .disposed(by: disposeBag)
-    }
-    
-    
-    // MARK: - Helper
-    
-    public func initialItemSize(for viewWidth: CGFloat) -> CGSize {
-        guard viewWidth > 0 else { return CGSize.zero }
-        
-        let overallItemSize = Constants.minItemWidth + LayoutConstants.defaultPadding
-        let numberofItemsPerRow = Int(viewWidth / overallItemSize)
-        let paddingSum = CGFloat(numberofItemsPerRow + 1) * LayoutConstants.defaultPadding
-        let itemWidth = (viewWidth - paddingSum) / CGFloat(numberofItemsPerRow)
-        
-        return CGSize(square: itemWidth)
     }
     
     
@@ -79,10 +65,25 @@ public final class PhotoGridViewModel {
         return photosRelay.value[safe: indexPath.item]
     }
     
+    public var allPhoto: [Photo] {
+        return photosRelay.value
+    }
+    
     
     // MARK: - Helpers
     
     func handleError(error: Error) {
-        errorRelay.accept(error)
+        errorRelay.accept(error.localizedDescription)
+    }
+    
+    public func initialItemSize(for viewWidth: CGFloat) -> CGSize {
+        guard viewWidth > 0 else { return CGSize.zero }
+        
+        let overallItemSize = Constants.minItemWidth + LayoutConstants.defaultPadding
+        let numberofItemsPerRow = Int(viewWidth / overallItemSize)
+        let paddingSum = CGFloat(numberofItemsPerRow + 1) * LayoutConstants.defaultPadding
+        let itemWidth = (viewWidth - paddingSum) / CGFloat(numberofItemsPerRow)
+        
+        return CGSize(square: itemWidth)
     }
 }
