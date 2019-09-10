@@ -12,7 +12,7 @@ public final class PhotoDownloadService: PhotoDownloadServiceProtocol {
     private let jsonDecoder: JSONDecoder
     
     public init(loader: Loader = Loader(),
-         jsonDecoder: JSONDecoder = JSONDecoder()) {
+                jsonDecoder: JSONDecoder = JSONDecoder()) {
         self.loader = loader
         self.jsonDecoder = jsonDecoder
     }

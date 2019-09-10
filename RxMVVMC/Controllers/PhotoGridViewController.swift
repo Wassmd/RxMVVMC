@@ -1,6 +1,6 @@
 import UIKit
 import RxSwift
-import RxMVVMShared
+import RxMVVMCShared
 
 protocol PhotoGridViewControllerDelegate: AnyObject {
     func showDetail(at indexPath: IndexPath, photos: [Photo])
@@ -14,7 +14,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     // MARK: Constants
     
     private enum Constants {
-        static let loadingViewSize = CGSize(square: 80)
+        static let loadingViewSize = CGSize(squareLength: 80)
         static let defaultPadding: CGFloat = 8
     }
     
@@ -31,9 +31,23 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     // MARK: Mutable
     
     private lazy var collectionView: GridCollectionView = {
-        let collectionView = GridCollectionView(itemSize: viewModel.initialItemSize(for: view.bounds.width),
-                                                minimumPadding: LayoutConstants.defaultPadding)
+        let collectionView = GridCollectionView(
+            itemSize: viewModel.initialItemSize(for: view.bounds.width),
+            minimumPadding: LayoutConstants.defaultPadding
+        )
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.registerReusableCell(PhotoGridCell.self)
+        
         return collectionView
+    }()
+    
+    private(set) lazy var searchController: UISearchController = {
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        search.obscuresBackgroundDuringPresentation = false
+        search.hidesNavigationBarDuringPresentation = false
+        return search
     }()
     
     
@@ -67,10 +81,12 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     private func setupView() {
         view.backgroundColor = .black
-        title = "Leopard"
+        title = "Photos"
     }
     
     private func setupSubViews() {
+        navigationItem.searchController = searchController
+        
         [collectionView, loadingView].forEach(view.addSubview(_:))
         
         collectionView.dataSource = self
@@ -83,7 +99,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     private func setupConstraints() {
         collectionView.pinEdges(to: view)
         
-        loadingView.pinSize(to: CGSize(square: 80))
+        loadingView.pinSize(to: CGSize(squareLength: 80))
         loadingView.centerVertically(to: view)
         loadingView.centerHorizontally(to: view)
     }
@@ -134,13 +150,6 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
         return cell
     }
     
-
-    // MARK: Actions
-    
-    private func downloadKittensPhotoFallBack() {
-        viewModel.downloadPhotos(isFallBack: true)
-    }
-    
     
     // MARK: - Helpers
     
@@ -150,5 +159,21 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     private func hideLoadingView() {
         loadingView.hide()
+    }
+}
+
+extension PhotoGridViewController: UISearchResultsUpdating {
+    
+   
+    // MARK: - Protocol Conformance
+    // MARK: UISearchResultsUpdating
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        searchController.searchBar.returnKeyType = .done
+        
+        guard searchController.isActive else { return }
+        
+        guard let text = searchController.searchBar.text, !text.isEmpty else { return }
+        viewModel.downloadPhotos(searchString: text)
     }
 }

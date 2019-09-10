@@ -1,5 +1,5 @@
 import UIKit
-import RxMVVMShared
+import RxMVVMCShared
 
 private enum PhotoGridSteps: CoordinateTo {
     case showDetail(indexPath: IndexPath, photos: [Photo])
@@ -24,13 +24,14 @@ class PhotoGridCoordinator: Coordinatable {
     
     private lazy var photoGridViewModel = PhotoGridViewModel()
     private lazy var photoGridViewController: PhotoGridViewController = {
-        photoGridViewModel.downloadPhotos()
+        photoGridViewModel.downloadPhotos(searchString: "Sunflower")
         let controller = PhotoGridViewController(
             viewModel: photoGridViewModel,
             coordinatorDelegate: self)
         
         return controller
     }()
+    
     
     // MARK: - Initializers
 

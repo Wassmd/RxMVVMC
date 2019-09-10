@@ -25,7 +25,7 @@ public class DetailCollectionViewLayout: UICollectionViewFlowLayout {
         return CGSize(width: contentWidth, height: 0)
     }
     
-    public override func prepare() {
+    override public func prepare() {
         guard let collectionView = collectionView else { return }
         
         contentWidth = 0

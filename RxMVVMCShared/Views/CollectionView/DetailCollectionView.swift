@@ -16,7 +16,7 @@ public class DetailCollectionView: UICollectionView {
      // MARK: - Initializers
     
     public init(frame: CGRect = .zero,
-         collectionViewLayout: DetailCollectionViewLayout = DetailCollectionViewLayout()) {
+                collectionViewLayout: DetailCollectionViewLayout = DetailCollectionViewLayout()) {
         super.init(frame: frame, collectionViewLayout: collectionViewLayout)
         
         setup()

@@ -57,7 +57,7 @@ public class PhotoGridCell: UICollectionViewCell {
     
     // MARK: - View lifecycle
     
-    public override func prepareForReuse() {
+    override public func prepareForReuse() {
         super.prepareForReuse()
     }
     
