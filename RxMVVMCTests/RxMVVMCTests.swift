@@ -1,8 +1,8 @@
 import XCTest
 
-@testable import RxMVVMShared
+@testable import RxMVVMCShared
 
-class RxMVVMSharedTests: XCTestCase {
+class RxMVVMCSharedTests: XCTestCase {
     
     func testExample() {
         XCTAssertEqual("Leopard", "Leopard")

@@ -15,7 +15,7 @@ class PhotoGridViewModelTests: XCTestCase {
         
         scheduler = TestScheduler(initialClock: 0)
         photoDownloadService = PhotoDownloadServiceMock()
-        viewModel = PhotoGridViewModel(downloadService: photoDownloadService)
+        viewModel = PhotoGridViewModel(with: scheduler, downloadService: photoDownloadService)
     }
     
     func testDownloadPhotos() {
@@ -36,6 +36,7 @@ class PhotoGridViewModelTests: XCTestCase {
         
         scheduler.start()
         viewModel.downloadPhotos(searchString: "Cars")
+        scheduler.advanceTo(30)
         
         let photos = observer.events.first?.value.element
         expect(photos?.count).to(equal(3))

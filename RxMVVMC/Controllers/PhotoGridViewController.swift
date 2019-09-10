@@ -81,7 +81,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     private func setupView() {
         view.backgroundColor = .black
-        title = "Leopard"
+        title = "Photos"
     }
     
     private func setupSubViews() {

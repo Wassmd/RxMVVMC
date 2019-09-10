@@ -30,12 +30,13 @@ public final class PhotoGridViewModel {
     
     // MARK: Mutable
     
-    var scheduler: SchedulerType = ConcurrentDispatchQueueScheduler(qos: .background)
+    var scheduler: SchedulerType
     
     
     // MARK: - Initializers
     
-    public init(downloadService: PhotoDownloadServiceProtocol = PhotoDownloadService()) {
+    public init(with scheduler: SchedulerType = ConcurrentDispatchQueueScheduler(qos: .background), downloadService: PhotoDownloadServiceProtocol = PhotoDownloadService()) {
+        self.scheduler = scheduler
         self.downloadService = downloadService
     }
     
