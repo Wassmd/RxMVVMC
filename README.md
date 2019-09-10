@@ -2,24 +2,20 @@
 
 **RxMVVMC demonstrates MVVM + coordinator pattern with RxSwift programming**
 
-* MVVM architecture to keeps View Controller light weight
-* VCs are only responsible to hook and update views
-* View Model has all business logics. They talk to Services and notify/bind to view controllers. 
+* MVVM architecture to keeps View Controller light weight, which enables to decouple business logic from the view for better separation of concerns and much improved testability. Along with it, RxSwift and RxCocoa is used for data binding, handle asynchronous tasks.
 * Code in ViewModel becomes fully testable. All dependecies are injected so that Mocking can be done with ease
 * RxSwift used here for webservices call and transfer of data from Service -> ViewModel -> ViewController
 * Coordinator takes all the responsibility of navigation and app flow task. 
-* View Controller becomes much lighter and can be used other places without any hassle.
-* MVVMC + RxSwift is more clean and maintainable.
-* Yet to include Unit Test
+* Unit Test shows mocking and asynchronous test coverage
 
-Project uses cocopod. Make sure you do
+Project uses Carthage. Make sure you do
 
 ```swift
-
-pod init
-pod install
-
+carthage update --platform iOS
 ```
+
+* Swiftlint is used to maintain clean code and code formatting.
+* For Networking `EndpointLoader` framework is used.
 
  * open workspace
  * Run on iPad simulator/Device :]
