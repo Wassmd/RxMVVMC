@@ -27,4 +27,4 @@ pod install
  
  Demo
  
- ![alt-text](https://github.com/Wassmd/RxMVVMC/blob/master/Cats.gif)
+ ![alt-text](https://github.com/Wassmd/RxMVVMC/blob/master/imageFinder_1.gif)
