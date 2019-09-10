@@ -38,16 +38,6 @@
                ReferencedContainer = "container:RxMVVMC.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5F34495D23219EC00080AA99"
-               BuildableName = "RxMVVMSharedTests.xctest"
-               BlueprintName = "RxMVVMSharedTests"
-               ReferencedContainer = "container:RxMVVMC.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

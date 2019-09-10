@@ -15,8 +15,22 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5F34495523219EC00080AA99"
-               BuildableName = "RxMVVMShared.framework"
-               BlueprintName = "RxMVVMShared"
+               BuildableName = "RxMVVMCShared.framework"
+               BlueprintName = "RxMVVMCShared"
+               ReferencedContainer = "container:RxMVVMC.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5F34495D23219EC00080AA99"
+               BuildableName = "RxMVVMCSharedTests.xctest"
+               BlueprintName = "RxMVVMCSharedTests"
                ReferencedContainer = "container:RxMVVMC.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,7 +42,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5F34495D23219EC00080AA99"
+               BuildableName = "RxMVVMCSharedTests.xctest"
+               BlueprintName = "RxMVVMCSharedTests"
+               ReferencedContainer = "container:RxMVVMC.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5F34495523219EC00080AA99"
+            BuildableName = "RxMVVMCShared.framework"
+            BlueprintName = "RxMVVMCShared"
+            ReferencedContainer = "container:RxMVVMC.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -46,8 +79,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F34495523219EC00080AA99"
-            BuildableName = "RxMVVMShared.framework"
-            BlueprintName = "RxMVVMShared"
+            BuildableName = "RxMVVMCShared.framework"
+            BlueprintName = "RxMVVMCShared"
             ReferencedContainer = "container:RxMVVMC.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,8 +97,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F34495523219EC00080AA99"
-            BuildableName = "RxMVVMShared.framework"
-            BlueprintName = "RxMVVMShared"
+            BuildableName = "RxMVVMCShared.framework"
+            BlueprintName = "RxMVVMCShared"
             ReferencedContainer = "container:RxMVVMC.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

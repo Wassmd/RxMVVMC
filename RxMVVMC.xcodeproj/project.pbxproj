@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F34495F23219EC00080AA99 /* RxMVVMShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F34495623219EC00080AA99 /* RxMVVMShared.framework */; };
+		5F34495F23219EC00080AA99 /* RxMVVMCShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F34495623219EC00080AA99 /* RxMVVMCShared.framework */; };
 		5F34496623219EC00080AA99 /* RxMVVMSharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F34496523219EC00080AA99 /* RxMVVMSharedTests.swift */; };
 		5F34496823219EC00080AA99 /* RxMVVMShared.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F34495823219EC00080AA99 /* RxMVVMShared.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F34496C23219EC00080AA99 /* RxMVVMShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F34495623219EC00080AA99 /* RxMVVMShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F34496C23219EC00080AA99 /* RxMVVMCShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F34495623219EC00080AA99 /* RxMVVMCShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F3583F22327BE9600781F6F /* CGSize+Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3583F12327BE9600781F6F /* CGSize+Square.swift */; };
 		5F3B34972321A25500EF69F2 /* PhotoDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F151448231FC4B200EEE9ED /* PhotoDownloadService.swift */; };
 		5F3B34992321A84300EF69F2 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DB865231F03340021B883 /* Kingfisher.framework */; };
 		5F3B349A2321A84300EF69F2 /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DB86A231F03E00021B883 /* ObjcExceptionBridging.framework */; };
@@ -46,6 +47,7 @@
 		5F54819023246338000A38B0 /* UICollectionView+Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54818F23246338000A38B0 /* UICollectionView+Generic.swift */; };
 		5F54819223246400000A38B0 /* Optional+Required.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54819123246400000A38B0 /* Optional+Required.swift */; };
 		5F7A6D9323258CF9008FC28C /* ZoomCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A6D9123258A7F008FC28C /* ZoomCalculator.swift */; };
+		5FAC16A323280D8000468A27 /* PhotoDownloadServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAC16A223280D8000468A27 /* PhotoDownloadServiceMock.swift */; };
 		5FC6BFDF22A54B8800F17764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */; };
 		5FC6BFF422A54B8800F17764 /* RxMVVMCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFF322A54B8800F17764 /* RxMVVMCTests.swift */; };
 		5FC6C02D22A54D5B00F17764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6C00822A54D5A00F17764 /* Assets.xcassets */; };
@@ -54,6 +56,7 @@
 		5FC6C03922A54D5B00F17764 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C01D22A54D5B00F17764 /* AppCoordinator.swift */; };
 		5FC6C03A22A54D5B00F17764 /* PhotoGridCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C01E22A54D5B00F17764 /* PhotoGridCoordinator.swift */; };
 		5FC6C04022A54E8900F17764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6C03F22A54E8900F17764 /* LaunchScreen.storyboard */; };
+		5FDF41A22327B898004FF002 /* PhotoGridViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF41A02327B881004FF002 /* PhotoGridViewModelTests.swift */; };
 		5FFA894323269AB700C44406 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA89412326985F00C44406 /* Logger.swift */; };
 		5FFA894523269CA200C44406 /* Error+LocalizedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA894423269CA200C44406 /* Error+LocalizedMessage.swift */; };
 /* End PBXBuildFile section */
@@ -96,7 +99,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5F34496C23219EC00080AA99 /* RxMVVMShared.framework in Embed Frameworks */,
+				5F34496C23219EC00080AA99 /* RxMVVMCShared.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,12 +119,13 @@
 		5F151448231FC4B200EEE9ED /* PhotoDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDownloadService.swift; sourceTree = "<group>"; };
 		5F15144D231FE79800EEE9ED /* URL+Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Endpoints.swift"; sourceTree = "<group>"; };
 		5F15147C23205E3D00EEE9ED /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
-		5F34495623219EC00080AA99 /* RxMVVMShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxMVVMShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F34495623219EC00080AA99 /* RxMVVMCShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxMVVMCShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F34495823219EC00080AA99 /* RxMVVMShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxMVVMShared.h; sourceTree = "<group>"; };
 		5F34495923219EC00080AA99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F34495E23219EC00080AA99 /* RxMVVMSharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxMVVMSharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F34495E23219EC00080AA99 /* RxMVVMCSharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxMVVMCSharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F34496523219EC00080AA99 /* RxMVVMSharedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMVVMSharedTests.swift; sourceTree = "<group>"; };
 		5F34496723219EC00080AA99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F3583F12327BE9600781F6F /* CGSize+Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Square.swift"; sourceTree = "<group>"; };
 		5F511B832323055000AE415E /* EndPointLoader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EndPointLoader.framework; path = Carthage/Build/iOS/EndPointLoader.framework; sourceTree = "<group>"; };
 		5F54817F2323FA68000A38B0 /* UIColor+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Constants.swift"; sourceTree = "<group>"; };
 		5F54818123244384000A38B0 /* DetailCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionView.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 		5F54818F23246338000A38B0 /* UICollectionView+Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Generic.swift"; sourceTree = "<group>"; };
 		5F54819123246400000A38B0 /* Optional+Required.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Required.swift"; sourceTree = "<group>"; };
 		5F7A6D9123258A7F008FC28C /* ZoomCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomCalculator.swift; sourceTree = "<group>"; };
+		5FAC16A223280D8000468A27 /* PhotoDownloadServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDownloadServiceMock.swift; sourceTree = "<group>"; };
 		5FC6BFDB22A54B8700F17764 /* RxMVVMC-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxMVVMC-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FC6BFEA22A54B8800F17764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -159,6 +164,7 @@
 		5FC6C02522A54D5B00F17764 /* GridCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionView.swift; sourceTree = "<group>"; };
 		5FC6C02722A54D5B00F17764 /* PhotoGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridCell.swift; sourceTree = "<group>"; };
 		5FC6C03F22A54E8900F17764 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5FDF41A02327B881004FF002 /* PhotoGridViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModelTests.swift; sourceTree = "<group>"; };
 		5FFA89412326985F00C44406 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		5FFA894423269CA200C44406 /* Error+LocalizedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+LocalizedMessage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,7 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F34495F23219EC00080AA99 /* RxMVVMShared.framework in Frameworks */,
+				5F34495F23219EC00080AA99 /* RxMVVMCShared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,9 +246,9 @@
 		5F34495723219EC00080AA99 /* RxMVVMCShared */ = {
 			isa = PBXGroup;
 			children = (
-				5FC6C00B22A54D5A00F17764 /* ViewModel */,
+				5FC6C00B22A54D5A00F17764 /* ViewModels */,
 				5FC6C02422A54D5B00F17764 /* Views */,
-				5FC6C02222A54D5B00F17764 /* Model */,
+				5FC6C02222A54D5B00F17764 /* Models */,
 				5F151445231FBFED00EEE9ED /* Services */,
 				5FC6C01022A54D5A00F17764 /* Extensions */,
 				5FC6C00422A54D5A00F17764 /* Protocols */,
@@ -256,6 +262,8 @@
 		5F34496423219EC00080AA99 /* RxMVVMCSharedTests */ = {
 			isa = PBXGroup;
 			children = (
+				5FAC16A123280D5800468A27 /* Mocks */,
+				5FDF419F2327B7B8004FF002 /* ViewModels */,
 				5F34496523219EC00080AA99 /* RxMVVMSharedTests.swift */,
 				5F34496723219EC00080AA99 /* Info.plist */,
 			);
@@ -286,6 +294,14 @@
 			path = ScrollView;
 			sourceTree = "<group>";
 		};
+		5FAC16A123280D5800468A27 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5FAC16A223280D8000468A27 /* PhotoDownloadServiceMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		5FC6BFD222A54B8700F17764 = {
 			isa = PBXGroup;
 			children = (
@@ -303,8 +319,8 @@
 			children = (
 				5FC6BFDB22A54B8700F17764 /* RxMVVMC-iPad.app */,
 				5FC6BFEF22A54B8800F17764 /* RxMVVMCTests.xctest */,
-				5F34495623219EC00080AA99 /* RxMVVMShared.framework */,
-				5F34495E23219EC00080AA99 /* RxMVVMSharedTests.xctest */,
+				5F34495623219EC00080AA99 /* RxMVVMCShared.framework */,
+				5F34495E23219EC00080AA99 /* RxMVVMCSharedTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -367,13 +383,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		5FC6C00B22A54D5A00F17764 /* ViewModel */ = {
+		5FC6C00B22A54D5A00F17764 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				5FC6C00C22A54D5A00F17764 /* PhotoGridViewModel.swift */,
 				5F54818D2324579B000A38B0 /* PhotoDetailViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		5FC6C00D22A54D5A00F17764 /* Controllers */ = {
@@ -404,6 +420,7 @@
 				5FC6C01322A54D5A00F17764 /* UIView+Layout.swift */,
 				5FC6C01422A54D5A00F17764 /* UIAlertController+ErrorAlert.swift */,
 				5F54818F23246338000A38B0 /* UICollectionView+Generic.swift */,
+				5F3583F12327BE9600781F6F /* CGSize+Square.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -445,12 +462,12 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		5FC6C02222A54D5B00F17764 /* Model */ = {
+		5FC6C02222A54D5B00F17764 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				5FC6C02322A54D5B00F17764 /* Photo.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5FC6C02422A54D5B00F17764 /* Views */ = {
@@ -475,6 +492,14 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		5FDF419F2327B7B8004FF002 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5FDF41A02327B881004FF002 /* PhotoGridViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -489,32 +514,35 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5F34495523219EC00080AA99 /* RxMVVMShared */ = {
+		5F34495523219EC00080AA99 /* RxMVVMCShared */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F34497123219EC00080AA99 /* Build configuration list for PBXNativeTarget "RxMVVMShared" */;
+			buildConfigurationList = 5F34497123219EC00080AA99 /* Build configuration list for PBXNativeTarget "RxMVVMCShared" */;
 			buildPhases = (
 				5F34495123219EC00080AA99 /* Headers */,
 				5F34495223219EC00080AA99 /* Sources */,
 				5F34495323219EC00080AA99 /* Frameworks */,
 				5F34495423219EC00080AA99 /* Resources */,
 				5F3B34982321A68300EF69F2 /* Carthage */,
+				5FDF419C2327B140004FF002 /* Swiftlint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RxMVVMShared;
+			name = RxMVVMCShared;
 			productName = RxMVVMShared;
-			productReference = 5F34495623219EC00080AA99 /* RxMVVMShared.framework */;
+			productReference = 5F34495623219EC00080AA99 /* RxMVVMCShared.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5F34495D23219EC00080AA99 /* RxMVVMSharedTests */ = {
+		5F34495D23219EC00080AA99 /* RxMVVMCSharedTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F34497223219EC00080AA99 /* Build configuration list for PBXNativeTarget "RxMVVMSharedTests" */;
+			buildConfigurationList = 5F34497223219EC00080AA99 /* Build configuration list for PBXNativeTarget "RxMVVMCSharedTests" */;
 			buildPhases = (
 				5F34495A23219EC00080AA99 /* Sources */,
 				5F34495B23219EC00080AA99 /* Frameworks */,
 				5F34495C23219EC00080AA99 /* Resources */,
+				5FDF419E2327B196004FF002 /* Swiftlint */,
+				5FDF41A32327BA05004FF002 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -522,9 +550,9 @@
 				5F34496123219EC00080AA99 /* PBXTargetDependency */,
 				5F34496323219EC00080AA99 /* PBXTargetDependency */,
 			);
-			name = RxMVVMSharedTests;
+			name = RxMVVMCSharedTests;
 			productName = RxMVVMSharedTests;
-			productReference = 5F34495E23219EC00080AA99 /* RxMVVMSharedTests.xctest */;
+			productReference = 5F34495E23219EC00080AA99 /* RxMVVMCSharedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		5FC6BFDA22A54B8700F17764 /* RxMVVMC-iPad */ = {
@@ -556,6 +584,7 @@
 				5FC6BFEC22A54B8800F17764 /* Frameworks */,
 				5FC6BFED22A54B8800F17764 /* Resources */,
 				5F0DB863231EF9E90021B883 /* Carthage */,
+				5FDF419D2327B189004FF002 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -608,8 +637,8 @@
 			targets = (
 				5FC6BFDA22A54B8700F17764 /* RxMVVMC-iPad */,
 				5FC6BFEE22A54B8800F17764 /* RxMVVMCTests */,
-				5F34495523219EC00080AA99 /* RxMVVMShared */,
-				5F34495D23219EC00080AA99 /* RxMVVMSharedTests */,
+				5F34495523219EC00080AA99 /* RxMVVMCShared */,
+				5F34495D23219EC00080AA99 /* RxMVVMCSharedTests */,
 			);
 		};
 /* End PBXProject section */
@@ -704,7 +733,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\ncd RxMVVMC\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		5F3B34982321A68300EF69F2 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -719,6 +748,80 @@
 			name = Carthage;
 			outputFileListPaths = (
 				"$(SRCROOT)/carthage-output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		5FDF419C2327B140004FF002 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		5FDF419D2327B189004FF002 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		5FDF419E2327B196004FF002 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		5FDF41A32327BA05004FF002 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/carthage-tests-input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/carthage-tests-output.xcfilelist",
 			);
 			outputPaths = (
 			);
@@ -769,7 +872,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FAC16A323280D8000468A27 /* PhotoDownloadServiceMock.swift in Sources */,
 				5F34496623219EC00080AA99 /* RxMVVMSharedTests.swift in Sources */,
+				5FDF41A22327B898004FF002 /* PhotoGridViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,6 +883,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FC6BFDF22A54B8800F17764 /* AppDelegate.swift in Sources */,
+				5F3583F22327BE9600781F6F /* CGSize+Square.swift in Sources */,
 				5FC6C03922A54D5B00F17764 /* AppCoordinator.swift in Sources */,
 				5FC6C03A22A54D5B00F17764 /* PhotoGridCoordinator.swift in Sources */,
 				5FC6C03122A54D5B00F17764 /* PhotoGridViewController.swift in Sources */,
@@ -798,7 +904,7 @@
 /* Begin PBXTargetDependency section */
 		5F34496123219EC00080AA99 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5F34495523219EC00080AA99 /* RxMVVMShared */;
+			target = 5F34495523219EC00080AA99 /* RxMVVMCShared */;
 			targetProxy = 5F34496023219EC00080AA99 /* PBXContainerItemProxy */;
 		};
 		5F34496323219EC00080AA99 /* PBXTargetDependency */ = {
@@ -808,7 +914,7 @@
 		};
 		5F34496A23219EC00080AA99 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5F34495523219EC00080AA99 /* RxMVVMShared */;
+			target = 5F34495523219EC00080AA99 /* RxMVVMCShared */;
 			targetProxy = 5F34496923219EC00080AA99 /* PBXContainerItemProxy */;
 		};
 		5FC6BFF122A54B8800F17764 /* PBXTargetDependency */ = {
@@ -890,8 +996,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JCPY7FXGR4;
-				INFOPLIST_FILE = RxMVVMSharedTests/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = RxMVVMCSharedTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -902,7 +1009,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxMVVMC.app/RxMVVMC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxMVVMC-iPad.app/RxMVVMC-iPad";
 			};
 			name = Debug;
 		};
@@ -911,8 +1018,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JCPY7FXGR4;
-				INFOPLIST_FILE = RxMVVMSharedTests/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = RxMVVMCSharedTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -923,7 +1031,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxMVVMC.app/RxMVVMC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxMVVMC-iPad.app/RxMVVMC-iPad";
 			};
 			name = Release;
 		};
@@ -1101,7 +1209,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1117,7 +1224,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxMVVMC.app/RxMVVMC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxMVVMC-iPad.app/RxMVVMC-iPad";
 			};
 			name = Debug;
 		};
@@ -1125,7 +1232,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1141,14 +1247,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxMVVMC.app/RxMVVMC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxMVVMC-iPad.app/RxMVVMC-iPad";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5F34497123219EC00080AA99 /* Build configuration list for PBXNativeTarget "RxMVVMShared" */ = {
+		5F34497123219EC00080AA99 /* Build configuration list for PBXNativeTarget "RxMVVMCShared" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F34496D23219EC00080AA99 /* Debug */,
@@ -1157,7 +1263,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F34497223219EC00080AA99 /* Build configuration list for PBXNativeTarget "RxMVVMSharedTests" */ = {
+		5F34497223219EC00080AA99 /* Build configuration list for PBXNativeTarget "RxMVVMCSharedTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F34496F23219EC00080AA99 /* Debug */,

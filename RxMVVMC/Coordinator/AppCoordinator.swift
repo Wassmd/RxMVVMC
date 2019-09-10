@@ -1,5 +1,5 @@
 import UIKit
-import RxMVVMShared
+import RxMVVMCShared
 
 enum AppStep: CoordinateTo {
     case showPhotoGridView

@@ -1,6 +1,6 @@
 import UIKit
 
-final class ZoomScaleCalculator {
+ enum ZoomScaleCalculator {
     static func calculateMinZoomScale(viewSize: CGSize, imageSize: CGSize) -> CGFloat {
         guard imageSize.width > 0, imageSize.height > 0 else { return 1 }
         
@@ -21,4 +21,3 @@ final class ZoomScaleCalculator {
         return nil
     }
 }
-

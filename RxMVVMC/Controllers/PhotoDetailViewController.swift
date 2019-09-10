@@ -1,6 +1,6 @@
 import UIKit
 import Kingfisher
-import RxMVVMShared
+import RxMVVMCShared
 
 class PhotoDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     

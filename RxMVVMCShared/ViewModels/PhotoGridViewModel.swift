@@ -42,15 +42,18 @@ public final class PhotoGridViewModel {
     
     // MARK: Action
     
-    public func downloadPhotos(isFallBack: Bool = false) {
-        downloadService.downloadPhotos(with: "Sunflower")
+    public func downloadPhotos(searchString: String, isFallBack: Bool = false) {
+        downloadService.downloadPhotos(with: searchString)
             .subscribeOn(scheduler)
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] in
                 guard let self = self else { return }
                 self.photosRelay.accept($0)
-                
-                }, onError: { [weak self] in self?.handleError(error: $0) })
+
+                }, onError: { [weak self] in
+
+                    self?.handleError(error: $0)
+            })
             .disposed(by: disposeBag)
     }
     
@@ -84,6 +87,6 @@ public final class PhotoGridViewModel {
         let paddingSum = CGFloat(numberofItemsPerRow + 1) * LayoutConstants.defaultPadding
         let itemWidth = (viewWidth - paddingSum) / CGFloat(numberofItemsPerRow)
         
-        return CGSize(square: itemWidth)
+        return CGSize(squareLength: itemWidth)
     }
 }
