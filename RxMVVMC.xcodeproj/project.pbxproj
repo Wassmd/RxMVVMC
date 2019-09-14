@@ -140,7 +140,7 @@
 		5FC6BFDB22A54B8700F17764 /* RxMVVMC-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxMVVMC-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FC6BFEA22A54B8800F17764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FC6BFEF22A54B8800F17764 /* RxMVVMCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxMVVMCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FC6BFEF22A54B8800F17764 /* RxMVVMCTests-iPad.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxMVVMCTests-iPad.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC6BFF322A54B8800F17764 /* RxMVVMCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMVVMCTests.swift; sourceTree = "<group>"; };
 		5FC6BFF522A54B8800F17764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC6C00222A54D5A00F17764 /* LayoutConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstants.swift; sourceTree = "<group>"; };
@@ -305,8 +305,8 @@
 		5FC6BFD222A54B8700F17764 = {
 			isa = PBXGroup;
 			children = (
-				5FC6BFDD22A54B8700F17764 /* RxMVVMC */,
-				5FC6BFF222A54B8800F17764 /* RxMVVMCTests */,
+				5FC6BFDD22A54B8700F17764 /* RxMVVMC-iPad */,
+				5FC6BFF222A54B8800F17764 /* RxMVVMCTests-iPad */,
 				5F34495723219EC00080AA99 /* RxMVVMCShared */,
 				5F34496423219EC00080AA99 /* RxMVVMCSharedTests */,
 				5FC6BFDC22A54B8700F17764 /* Products */,
@@ -318,14 +318,14 @@
 			isa = PBXGroup;
 			children = (
 				5FC6BFDB22A54B8700F17764 /* RxMVVMC-iPad.app */,
-				5FC6BFEF22A54B8800F17764 /* RxMVVMCTests.xctest */,
+				5FC6BFEF22A54B8800F17764 /* RxMVVMCTests-iPad.xctest */,
 				5F34495623219EC00080AA99 /* RxMVVMCShared.framework */,
 				5F34495E23219EC00080AA99 /* RxMVVMCSharedTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5FC6BFDD22A54B8700F17764 /* RxMVVMC */ = {
+		5FC6BFDD22A54B8700F17764 /* RxMVVMC-iPad */ = {
 			isa = PBXGroup;
 			children = (
 				5FC6BFFE22A54BAA00F17764 /* Application */,
@@ -333,16 +333,16 @@
 				5FC6C00D22A54D5A00F17764 /* Controllers */,
 				5FC6C00722A54D5A00F17764 /* Resources */,
 			);
-			path = RxMVVMC;
+			path = "RxMVVMC-iPad";
 			sourceTree = "<group>";
 		};
-		5FC6BFF222A54B8800F17764 /* RxMVVMCTests */ = {
+		5FC6BFF222A54B8800F17764 /* RxMVVMCTests-iPad */ = {
 			isa = PBXGroup;
 			children = (
 				5FC6BFF322A54B8800F17764 /* RxMVVMCTests.swift */,
 				5FC6BFF522A54B8800F17764 /* Info.plist */,
 			);
-			path = RxMVVMCTests;
+			path = "RxMVVMCTests-iPad";
 			sourceTree = "<group>";
 		};
 		5FC6BFFE22A54BAA00F17764 /* Application */ = {
@@ -576,9 +576,9 @@
 			productReference = 5FC6BFDB22A54B8700F17764 /* RxMVVMC-iPad.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5FC6BFEE22A54B8800F17764 /* RxMVVMCTests */ = {
+		5FC6BFEE22A54B8800F17764 /* RxMVVMCTests-iPad */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5FC6BFFB22A54B8800F17764 /* Build configuration list for PBXNativeTarget "RxMVVMCTests" */;
+			buildConfigurationList = 5FC6BFFB22A54B8800F17764 /* Build configuration list for PBXNativeTarget "RxMVVMCTests-iPad" */;
 			buildPhases = (
 				5FC6BFEB22A54B8800F17764 /* Sources */,
 				5FC6BFEC22A54B8800F17764 /* Frameworks */,
@@ -591,9 +591,9 @@
 			dependencies = (
 				5FC6BFF122A54B8800F17764 /* PBXTargetDependency */,
 			);
-			name = RxMVVMCTests;
+			name = "RxMVVMCTests-iPad";
 			productName = RxMVVMCTests;
-			productReference = 5FC6BFEF22A54B8800F17764 /* RxMVVMCTests.xctest */;
+			productReference = 5FC6BFEF22A54B8800F17764 /* RxMVVMCTests-iPad.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -636,7 +636,7 @@
 			projectRoot = "";
 			targets = (
 				5FC6BFDA22A54B8700F17764 /* RxMVVMC-iPad */,
-				5FC6BFEE22A54B8800F17764 /* RxMVVMCTests */,
+				5FC6BFEE22A54B8800F17764 /* RxMVVMCTests-iPad */,
 				5F34495523219EC00080AA99 /* RxMVVMCShared */,
 				5F34495D23219EC00080AA99 /* RxMVVMCSharedTests */,
 			);
@@ -1163,7 +1163,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = RxMVVMC/Application/Info.plist;
+				INFOPLIST_FILE = "RxMVVMC-iPad/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1190,7 +1190,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = RxMVVMC/Application/Info.plist;
+				INFOPLIST_FILE = "RxMVVMC-iPad/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1214,7 +1214,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = RxMVVMCTests/Info.plist;
+				INFOPLIST_FILE = "RxMVVMCTests-iPad/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1237,7 +1237,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = RxMVVMCTests/Info.plist;
+				INFOPLIST_FILE = "RxMVVMCTests-iPad/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1290,7 +1290,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5FC6BFFB22A54B8800F17764 /* Build configuration list for PBXNativeTarget "RxMVVMCTests" */ = {
+		5FC6BFFB22A54B8800F17764 /* Build configuration list for PBXNativeTarget "RxMVVMCTests-iPad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FC6BFFC22A54B8800F17764 /* Debug */,

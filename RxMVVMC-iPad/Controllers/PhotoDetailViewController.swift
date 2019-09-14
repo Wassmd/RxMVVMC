@@ -48,6 +48,7 @@ class PhotoDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         collectionView.scrollToItem(at: viewModel.currenIndexPath, at: .centeredHorizontally, animated: false)
     }
     
+    
     // MARK: - Setups
     
     private func setupView() {

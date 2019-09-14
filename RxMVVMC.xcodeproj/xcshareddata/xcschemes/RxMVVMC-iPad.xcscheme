@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5FC6BFEE22A54B8800F17764"
-               BuildableName = "RxMVVMCTests.xctest"
-               BlueprintName = "RxMVVMCTests"
+               BuildableName = "RxMVVMCTests-iPad.xctest"
+               BlueprintName = "RxMVVMCTests-iPad"
                ReferencedContainer = "container:RxMVVMC.xcodeproj">
             </BuildableReference>
          </TestableReference>

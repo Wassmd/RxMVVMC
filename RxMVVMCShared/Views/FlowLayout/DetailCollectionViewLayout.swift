@@ -26,7 +26,8 @@ public class DetailCollectionViewLayout: UICollectionViewFlowLayout {
     }
     
     override public func prepare() {
-        guard let collectionView = collectionView else { return }
+        guard collectionViewLayoutAttributes.isEmpty,
+            let collectionView = collectionView else { return }
         
         contentWidth = 0
         var xOffset: CGFloat = 0
@@ -50,7 +51,15 @@ public class DetailCollectionViewLayout: UICollectionViewFlowLayout {
     }
     
     override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        return collectionViewLayoutAttributes
+        var visibleLayoutAttributes: [UICollectionViewLayoutAttributes] = []
+        
+        // Loop through the cache and look for items in the rect
+        for attributes in collectionViewLayoutAttributes {
+            if attributes.frame.intersects(rect) {
+                visibleLayoutAttributes.append(attributes)
+            }
+        }
+        return visibleLayoutAttributes
     }
     
     override public func invalidateLayout() {
