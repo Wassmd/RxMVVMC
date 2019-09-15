@@ -17,7 +17,7 @@ carthage update --platform iOS
 * Swiftlint is used to maintain clean code and code formatting.
 * For Networking `EndpointLoader` framework is used.
 
- * open workspace
+ * open the project
  * Run on iPad simulator/Device :]
  
  
