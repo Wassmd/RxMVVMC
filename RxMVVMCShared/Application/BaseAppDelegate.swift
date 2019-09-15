@@ -1,26 +1,23 @@
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+open class BaseAppDelegate: UIResponder, UIApplicationDelegate {
+    
     
     // MARK: - Properties
     // MARK: Mutable
     
-    var window: UIWindow?
-    private lazy var appCoordinator = AppCoordinator()
+    public var window: UIWindow?
     
-   
     // MARK: - Protocol Conformance
     // MARK: UIApplicationDelegate
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         setupNavigationBarAppearance()
-        appCoordinator.start()
+
         
         return true
     }
-    
     
     // MARK: - Helper
     

@@ -1,23 +1,13 @@
 import UIKit
 import RxSwift
-import RxMVVMCShared
 
-protocol PhotoGridViewControllerDelegate: AnyObject {
+public protocol PhotoGridViewControllerDelegate: AnyObject {
     func showDetail(at indexPath: IndexPath, photos: [Photo])
     func showErrorAlert(with message: String)
 }
 
-class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+open class PhotoGridViewController<CellType: PhotoGridCell>: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchResultsUpdating {
    
-    
-    // MARK: - Properties
-    // MARK: Constants
-    
-    private enum Constants {
-        static let loadingViewSize = CGSize(squareLength: 80)
-        static let defaultPadding: CGFloat = 8
-    }
-    
     
     // MARK: - Properties
     // MARK: Immutable
@@ -37,7 +27,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
         )
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.registerReusableCell(PhotoGridCell.self)
+        collectionView.registerReusableCell(CellType.self)
         
         return collectionView
     }()
@@ -53,21 +43,21 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     // MARK: - Initializers
     
-    init(viewModel: PhotoGridViewModel = PhotoGridViewModel(),
-         coordinatorDelegate: PhotoGridViewControllerDelegate?) {
+    public init(viewModel: PhotoGridViewModel = PhotoGridViewModel(),
+                coordinatorDelegate: PhotoGridViewControllerDelegate?) {
         self.viewModel = viewModel
         self.coordinatorDelegate = coordinatorDelegate
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
      // MARK: - View Lifecycle
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
@@ -86,13 +76,8 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     private func setupSubViews() {
         navigationItem.searchController = searchController
-        
-        [collectionView, loadingView].forEach(view.addSubview(_:))
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(PhotoGridCell.self, forCellWithReuseIdentifier: PhotoGridCell.reusableString)
-        
+        [collectionView, loadingView].forEach(view.addSubview)
+
         loadingView.show()
     }
     
@@ -136,13 +121,13 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     // MARK: - Protocol Conformance
     // MARK: UICollectionViewDatasource
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfPhotos(at: section)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let rawCell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoGridCell.reusableString, for: indexPath)
-        guard let cell = rawCell as? PhotoGridCell
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let rawCell = collectionView.dequeueReusableCell(withReuseIdentifier: CellType.reusableString, for: indexPath)
+        guard let cell = rawCell as? CellType
             else { return rawCell }
         
         cell.photo = viewModel.photoObject(at: indexPath)
@@ -150,6 +135,18 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
         return cell
     }
     
+    
+    // MARK: - Protocol Conformance
+    // MARK: UISearchResultsUpdating
+    
+    public func updateSearchResults(for searchController: UISearchController) {
+        searchController.searchBar.returnKeyType = .done
+        
+        guard searchController.isActive else { return }
+        
+        guard let text = searchController.searchBar.text, !text.isEmpty else { return }
+        viewModel.downloadPhotos(searchString: text)
+    }
     
     // MARK: - Helpers
     
@@ -159,21 +156,5 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     private func hideLoadingView() {
         loadingView.hide()
-    }
-}
-
-extension PhotoGridViewController: UISearchResultsUpdating {
-    
-   
-    // MARK: - Protocol Conformance
-    // MARK: UISearchResultsUpdating
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        searchController.searchBar.returnKeyType = .done
-        
-        guard searchController.isActive else { return }
-        
-        guard let text = searchController.searchBar.text, !text.isEmpty else { return }
-        viewModel.downloadPhotos(searchString: text)
     }
 }

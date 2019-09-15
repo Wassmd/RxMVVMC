@@ -2,14 +2,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-public final class PhotoGridViewModel {
+open class PhotoGridViewModel {
     
-    
-    // MARK: - Constants
-    
-    private enum Constants {
-        static let minItemWidth: CGFloat = 200
-    }
     
     // MARK: - Properties
     // MARK: Immutables
@@ -80,14 +74,7 @@ public final class PhotoGridViewModel {
         errorRelay.accept(error.localizedDescription)
     }
     
-    public func initialItemSize(for viewWidth: CGFloat) -> CGSize {
-        guard viewWidth > 0 else { return CGSize.zero }
-        
-        let overallItemSize = Constants.minItemWidth + LayoutConstants.defaultPadding
-        let numberofItemsPerRow = Int(viewWidth / overallItemSize)
-        let paddingSum = CGFloat(numberofItemsPerRow + 1) * LayoutConstants.defaultPadding
-        let itemWidth = (viewWidth - paddingSum) / CGFloat(numberofItemsPerRow)
-        
-        return CGSize(squareLength: itemWidth)
+    open func initialItemSize(for viewWidth: CGFloat) -> CGSize {
+        fatalError("Must be implemented by subclass")
     }
 }

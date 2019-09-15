@@ -41,23 +41,4 @@ class PhotoGridViewModelTests: XCTestCase {
         let photos = observer.events.first?.value.element
         expect(photos?.count).to(equal(3))
     }
-    
-    func testInitialItemSize_negativeInput_zeroReturned() {
-        let size = viewModel.initialItemSize(for: -10)
-        
-        expect(size).to(equal(CGSize.zero))
-    }
-    
-    func testInitialItemSize_zeroInput_zeroReturned() {
-        let size = viewModel.initialItemSize(for: 0)
-        
-        expect(size).to(equal(CGSize.zero))
-    }
-    
-    func testInitialItemSize_largePhoneWidth_correctSizeReturned() {
-        let size = viewModel.initialItemSize(for: 414)
-        let expectedSize = CGSize(squareLength: 350.0)
-        
-        expect(size).to(equal(expectedSize))
-    }
 }

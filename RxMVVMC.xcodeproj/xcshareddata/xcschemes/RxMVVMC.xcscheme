@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5FC6BFDA22A54B8700F17764"
-               BuildableName = "RxMVVMC-iPad.app"
-               BlueprintName = "RxMVVMC-iPad"
+               BlueprintIdentifier = "5F32BC4C232D880500A27899"
+               BuildableName = "RxMVVMC.app"
+               BlueprintName = "RxMVVMC"
                ReferencedContainer = "container:RxMVVMC.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5FC6BFEE22A54B8800F17764"
-               BuildableName = "RxMVVMCTests-iPad.xctest"
-               BlueprintName = "RxMVVMCTests-iPad"
+               BlueprintIdentifier = "5F32BC5F232D880600A27899"
+               BuildableName = "RxMVVMCTests.xctest"
+               BlueprintName = "RxMVVMCTests"
                ReferencedContainer = "container:RxMVVMC.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5FC6BFDA22A54B8700F17764"
-            BuildableName = "RxMVVMC-iPad.app"
-            BlueprintName = "RxMVVMC-iPad"
+            BlueprintIdentifier = "5F32BC4C232D880500A27899"
+            BuildableName = "RxMVVMC.app"
+            BlueprintName = "RxMVVMC"
             ReferencedContainer = "container:RxMVVMC.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +65,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5FC6BFDA22A54B8700F17764"
-            BuildableName = "RxMVVMC-iPad.app"
-            BlueprintName = "RxMVVMC-iPad"
+            BlueprintIdentifier = "5F32BC4C232D880500A27899"
+            BuildableName = "RxMVVMC.app"
+            BlueprintName = "RxMVVMC"
             ReferencedContainer = "container:RxMVVMC.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -84,9 +84,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5FC6BFDA22A54B8700F17764"
-            BuildableName = "RxMVVMC-iPad.app"
-            BlueprintName = "RxMVVMC-iPad"
+            BlueprintIdentifier = "5F32BC4C232D880500A27899"
+            BuildableName = "RxMVVMC.app"
+            BlueprintName = "RxMVVMC"
             ReferencedContainer = "container:RxMVVMC.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -7,8 +7,8 @@ private enum PhotoGridSteps: CoordinateTo {
 }
 
 class PhotoGridCoordinator: Coordinatable {
-
-
+    
+    
     // MARK: - Properties
     // MARK: Immutable
     
@@ -22,11 +22,12 @@ class PhotoGridCoordinator: Coordinatable {
     var deallocatable: CoordinatorDeallocatable?
     var childCoordinators = [UUID: Coordinatable]()
     
-    private lazy var photoGridViewModel = PhotoGridViewModel()
-    private lazy var photoGridViewController: PhotoGridViewController = {
-        photoGridViewModel.downloadPhotos(searchString: "Sunflower")
-        let controller = PhotoGridViewController(
-            viewModel: photoGridViewModel,
+    private lazy var photoGridPhoneViewModel = PhotoGridPhoneViewModel()
+    private(set) lazy var photoGridViewController: PhotoGridPhoneViewController = {
+        photoGridPhoneViewModel.downloadPhotos(searchString: "Sunflower")
+
+        let controller = PhotoGridPhoneViewController(
+            viewModel: photoGridPhoneViewModel,
             coordinatorDelegate: self)
         
         return controller
@@ -34,7 +35,7 @@ class PhotoGridCoordinator: Coordinatable {
     
     
     // MARK: - Initializers
-
+    
     init(uniqueId: UUID,
          deallocatable: CoordinatorDeallocatable? = nil,
          window: UIWindow?,
@@ -69,6 +70,7 @@ class PhotoGridCoordinator: Coordinatable {
         window.makeKeyAndVisible()
         
     }
+    
     
     // MARK: - Transitions
     

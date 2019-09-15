@@ -1,10 +1,11 @@
 import UIKit
 import Kingfisher
 
-public class PhotoGridCell: UICollectionViewCell {
+open class PhotoGridCell: UICollectionViewCell {
     
     
-    // MARK: InnerTypes
+    // MARK: - Inner Types
+    
     private enum Constants {
         static let titleLabelTopOffset: CGFloat = 8
         static let titleLabelFont = UIFont.boldSystemFont(ofSize: 24)
@@ -16,22 +17,17 @@ public class PhotoGridCell: UICollectionViewCell {
     // MARK: - Properties
     // MARK: Immutables
     
-    let imageView: UIImageView = {
-       let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "kittens")
-        return imageView
-    }()
+    let imageView = UIImageView()
     
-    let titleLabel: UILabel = {
+    public let titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.textColor = .gray
-        titleLabel.text = "Kittens"
-        titleLabel.font = Constants.titleLabelFont
+        titleLabel.text = ""
         titleLabel.textAlignment = .center
         return titleLabel
     }()
-        
-    // MARK: - Mutable
+    
+    // MARK: Mutable
     
     public var photo: Photo? {
         didSet {
@@ -42,7 +38,7 @@ public class PhotoGridCell: UICollectionViewCell {
     
     // MARK: - Initializers
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         
         setup()
@@ -50,14 +46,14 @@ public class PhotoGridCell: UICollectionViewCell {
         setupConstraints()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
     // MARK: - View lifecycle
     
-    override public func prepareForReuse() {
+    override open func prepareForReuse() {
         super.prepareForReuse()
     }
     
@@ -69,7 +65,7 @@ public class PhotoGridCell: UICollectionViewCell {
         imageView.layer.masksToBounds = true
     }
     
-    private func setupSubViews() {
+    open func setupSubViews() {
         [imageView, titleLabel].forEach(contentView.addSubview(_:))
     }
   
