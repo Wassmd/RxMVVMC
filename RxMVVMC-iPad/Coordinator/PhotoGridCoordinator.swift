@@ -22,7 +22,7 @@ class PhotoGridCoordinator: Coordinatable {
     var deallocatable: CoordinatorDeallocatable?
     var childCoordinators = [UUID: Coordinatable]()
     
-    private lazy var photoGridViewModel = PhotoGridViewModel()
+    private lazy var photoGridViewModel = PhotoGridPadViewModel()
     private(set) lazy var photoGridViewController: PhotoGridViewController = {
         photoGridViewModel.downloadPhotos(searchString: "Sunflower")
         let controller = PhotoGridViewController(
