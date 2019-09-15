@@ -1,7 +1,7 @@
 import UIKit
 import Kingfisher
 
-public class PhotoGridCell: UICollectionViewCell {
+open class PhotoGridCell: UICollectionViewCell {
     
     
     // MARK: - Inner Types
@@ -19,15 +19,14 @@ public class PhotoGridCell: UICollectionViewCell {
     
     let imageView = UIImageView()
     
-    let titleLabel: UILabel = {
+    public let titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.textColor = .gray
         titleLabel.text = ""
-        titleLabel.font = Constants.titleLabelFont
         titleLabel.textAlignment = .center
         return titleLabel
     }()
-        
+    
     // MARK: Mutable
     
     public var photo: Photo? {
@@ -39,7 +38,7 @@ public class PhotoGridCell: UICollectionViewCell {
     
     // MARK: - Initializers
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         
         setup()
@@ -47,14 +46,14 @@ public class PhotoGridCell: UICollectionViewCell {
         setupConstraints()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
     // MARK: - View lifecycle
     
-    override public func prepareForReuse() {
+    override open func prepareForReuse() {
         super.prepareForReuse()
     }
     
@@ -66,7 +65,7 @@ public class PhotoGridCell: UICollectionViewCell {
         imageView.layer.masksToBounds = true
     }
     
-    private func setupSubViews() {
+    open func setupSubViews() {
         [imageView, titleLabel].forEach(contentView.addSubview(_:))
     }
   

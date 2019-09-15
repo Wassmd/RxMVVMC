@@ -65,6 +65,10 @@
 		5F98FFA4232E48F300A1AC5D /* RxMVVMCShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F34495623219EC00080AA99 /* RxMVVMCShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F98FFA8232E5F8500A1AC5D /* PhotoGridPadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F98FFA7232E5F8500A1AC5D /* PhotoGridPadViewModel.swift */; };
 		5F98FFAA232E625400A1AC5D /* ItemSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F98FFA9232E625400A1AC5D /* ItemSizeCalculator.swift */; };
+		5F98FFAC232E743A00A1AC5D /* PhotoGridPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F98FFAB232E743A00A1AC5D /* PhotoGridPhoneCell.swift */; };
+		5F98FFB0232E7AA300A1AC5D /* PhotoGridPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F98FFAF232E7AA300A1AC5D /* PhotoGridPhoneViewController.swift */; };
+		5F98FFB4232EA28000A1AC5D /* PhotoGridPadViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F98FFB3232EA28000A1AC5D /* PhotoGridPadViewModelTests.swift */; };
+		5F98FFB7232EA45D00A1AC5D /* PhotoGridPhoneViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F98FFB6232EA45D00A1AC5D /* PhotoGridPhoneViewModelTests.swift */; };
 		5FAC16A323280D8000468A27 /* PhotoDownloadServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAC16A223280D8000468A27 /* PhotoDownloadServiceMock.swift */; };
 		5FC6BFDF22A54B8800F17764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */; };
 		5FC6BFF422A54B8800F17764 /* RxMVVMCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFF322A54B8800F17764 /* RxMVVMCTests.swift */; };
@@ -189,6 +193,10 @@
 		5F98FF9F232E3CC300A1AC5D /* PhotoGridPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridPhoneViewModel.swift; sourceTree = "<group>"; };
 		5F98FFA7232E5F8500A1AC5D /* PhotoGridPadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridPadViewModel.swift; sourceTree = "<group>"; };
 		5F98FFA9232E625400A1AC5D /* ItemSizeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSizeCalculator.swift; sourceTree = "<group>"; };
+		5F98FFAB232E743A00A1AC5D /* PhotoGridPhoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridPhoneCell.swift; sourceTree = "<group>"; };
+		5F98FFAF232E7AA300A1AC5D /* PhotoGridPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridPhoneViewController.swift; sourceTree = "<group>"; };
+		5F98FFB3232EA28000A1AC5D /* PhotoGridPadViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridPadViewModelTests.swift; sourceTree = "<group>"; };
+		5F98FFB6232EA45D00A1AC5D /* PhotoGridPhoneViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridPhoneViewModelTests.swift; sourceTree = "<group>"; };
 		5FAC16A223280D8000468A27 /* PhotoDownloadServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDownloadServiceMock.swift; sourceTree = "<group>"; };
 		5FC6BFDB22A54B8700F17764 /* RxMVVMC-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxMVVMC-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -318,6 +326,7 @@
 				5F32BC79232E14F800A27899 /* Coordinatore */,
 				5F32BC6F232D8BA200A27899 /* ViewControllers */,
 				5F98FF9E232E3CA100A1AC5D /* ViewModel */,
+				5F98FFAD232E7A0600A1AC5D /* Views */,
 				5F32BC6E232D8B4E00A27899 /* Resources */,
 			);
 			path = RxMVVMC;
@@ -326,6 +335,7 @@
 		5F32BC63232D880600A27899 /* RxMVVMCTests */ = {
 			isa = PBXGroup;
 			children = (
+				5F98FFB5232EA42F00A1AC5D /* ViewModels */,
 				5F32BC64232D880600A27899 /* RxMVVMCTests.swift */,
 				5F32BC66232D880600A27899 /* Info.plist */,
 			);
@@ -353,6 +363,7 @@
 		5F32BC6F232D8BA200A27899 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5F98FFAF232E7AA300A1AC5D /* PhotoGridPhoneViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -443,6 +454,38 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5F98FFAD232E7A0600A1AC5D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5F98FFAE232E7A1A00A1AC5D /* CollectionViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5F98FFAE232E7A1A00A1AC5D /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F98FFAB232E743A00A1AC5D /* PhotoGridPhoneCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		5F98FFB2232EA10E00A1AC5D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5F98FFB3232EA28000A1AC5D /* PhotoGridPadViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5F98FFB5232EA42F00A1AC5D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5F98FFB6232EA45D00A1AC5D /* PhotoGridPhoneViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		5FAC16A123280D5800468A27 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +535,7 @@
 		5FC6BFF222A54B8800F17764 /* RxMVVMCTests-iPad */ = {
 			isa = PBXGroup;
 			children = (
+				5F98FFB2232EA10E00A1AC5D /* ViewModels */,
 				5FC6BFF322A54B8800F17764 /* RxMVVMCTests.swift */,
 				5FC6BFF522A54B8800F17764 /* Info.plist */,
 			);
@@ -677,6 +721,7 @@
 				5F32BC4B232D880500A27899 /* Resources */,
 				5F32BC7E232E16B600A27899 /* Carthage */,
 				5F98FFA5232E48F300A1AC5D /* Embed Frameworks */,
+				5F98FFB1232E922900A1AC5D /* Swift */,
 			);
 			buildRules = (
 			);
@@ -695,6 +740,7 @@
 				5F32BC5C232D880600A27899 /* Sources */,
 				5F32BC5D232D880600A27899 /* Frameworks */,
 				5F32BC5E232D880600A27899 /* Resources */,
+				5F98FFB8232EA58100A1AC5D /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -992,6 +1038,44 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
+		5F98FFB1232E922900A1AC5D /* Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		5F98FFB8232EA58100A1AC5D /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/carthage-tests-input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/carthage-tests-output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		5FDF419C2327B140004FF002 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1077,7 +1161,9 @@
 				5F32BC50232D880500A27899 /* AppDelegate.swift in Sources */,
 				5F32BC7D232E159C00A27899 /* PhotoGridCoordinator.swift in Sources */,
 				5F98FFA0232E3CC300A1AC5D /* PhotoGridPhoneViewModel.swift in Sources */,
+				5F98FFAC232E743A00A1AC5D /* PhotoGridPhoneCell.swift in Sources */,
 				5F98FF9C232E393C00A1AC5D /* BaseAppDelegate.swift in Sources */,
+				5F98FFB0232E7AA300A1AC5D /* PhotoGridPhoneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1085,6 +1171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F98FFB7232EA45D00A1AC5D /* PhotoGridPhoneViewModelTests.swift in Sources */,
 				5F32BC65232D880600A27899 /* RxMVVMCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1156,6 +1243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F98FFB4232EA28000A1AC5D /* PhotoGridPadViewModelTests.swift in Sources */,
 				5FC6BFF422A54B8800F17764 /* RxMVVMCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1262,6 +1350,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JCPY7FXGR4;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = RxMVVMCTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1284,6 +1373,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JCPY7FXGR4;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = RxMVVMCTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1585,6 +1675,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1608,6 +1699,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

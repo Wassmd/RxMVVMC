@@ -7,7 +7,7 @@ class PhotoGridPhoneViewModel: PhotoGridViewModel {
     // MARK: - Constants
     
     private enum Constants {
-        static let minItemWidth: CGFloat = 80
+        static let minItemWidth: CGFloat = 100
     }
     
     
