@@ -1,13 +1,12 @@
 import UIKit
 import RxSwift
-import RxMVVMCShared
 
-protocol PhotoGridViewControllerDelegate: AnyObject {
+public protocol PhotoGridViewControllerDelegate: AnyObject {
     func showDetail(at indexPath: IndexPath, photos: [Photo])
     func showErrorAlert(with message: String)
 }
 
-class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+public class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
    
     
     // MARK: - Properties
@@ -53,8 +52,8 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
     // MARK: - Initializers
     
-    init(viewModel: PhotoGridViewModel = PhotoGridViewModel(),
-         coordinatorDelegate: PhotoGridViewControllerDelegate?) {
+    public init(viewModel: PhotoGridViewModel = PhotoGridViewModel(),
+                coordinatorDelegate: PhotoGridViewControllerDelegate?) {
         self.viewModel = viewModel
         self.coordinatorDelegate = coordinatorDelegate
         super.init(nibName: nil, bundle: nil)
@@ -67,7 +66,7 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     
      // MARK: - View Lifecycle
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
@@ -136,11 +135,11 @@ class PhotoGridViewController: UIViewController, UICollectionViewDataSource, UIC
     // MARK: - Protocol Conformance
     // MARK: UICollectionViewDatasource
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfPhotos(at: section)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let rawCell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoGridCell.reusableString, for: indexPath)
         guard let cell = rawCell as? PhotoGridCell
             else { return rawCell }
@@ -168,7 +167,7 @@ extension PhotoGridViewController: UISearchResultsUpdating {
     // MARK: - Protocol Conformance
     // MARK: UISearchResultsUpdating
     
-    func updateSearchResults(for searchController: UISearchController) {
+    public func updateSearchResults(for searchController: UISearchController) {
         searchController.searchBar.returnKeyType = .done
         
         guard searchController.isActive else { return }

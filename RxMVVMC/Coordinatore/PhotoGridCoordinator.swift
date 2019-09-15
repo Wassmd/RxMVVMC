@@ -7,8 +7,8 @@ private enum PhotoGridSteps: CoordinateTo {
 }
 
 class PhotoGridCoordinator: Coordinatable {
-
-
+    
+    
     // MARK: - Properties
     // MARK: Immutable
     
@@ -34,7 +34,7 @@ class PhotoGridCoordinator: Coordinatable {
     
     
     // MARK: - Initializers
-
+    
     init(uniqueId: UUID,
          deallocatable: CoordinatorDeallocatable? = nil,
          window: UIWindow?,

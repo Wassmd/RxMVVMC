@@ -4,7 +4,8 @@ import Kingfisher
 public class PhotoGridCell: UICollectionViewCell {
     
     
-    // MARK: InnerTypes
+    // MARK: - Inner Types
+    
     private enum Constants {
         static let titleLabelTopOffset: CGFloat = 8
         static let titleLabelFont = UIFont.boldSystemFont(ofSize: 24)
@@ -16,22 +17,18 @@ public class PhotoGridCell: UICollectionViewCell {
     // MARK: - Properties
     // MARK: Immutables
     
-    let imageView: UIImageView = {
-       let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "kittens")
-        return imageView
-    }()
+    let imageView = UIImageView()
     
     let titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.textColor = .gray
-        titleLabel.text = "Kittens"
+        titleLabel.text = ""
         titleLabel.font = Constants.titleLabelFont
         titleLabel.textAlignment = .center
         return titleLabel
     }()
         
-    // MARK: - Mutable
+    // MARK: Mutable
     
     public var photo: Photo? {
         didSet {

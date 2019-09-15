@@ -3,7 +3,7 @@ import RxMVVMCShared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     
     // MARK: - Properties
     // MARK: Mutable
@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private lazy var appCoordinator = AppCoordinator()
     
-   
+    
     // MARK: - Protocol Conformance
     // MARK: UIApplicationDelegate
     

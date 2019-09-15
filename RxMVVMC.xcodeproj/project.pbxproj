@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F32BC50232D880500A27899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F32BC4F232D880500A27899 /* AppDelegate.swift */; };
+		5F32BC57232D880600A27899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F32BC56232D880600A27899 /* Assets.xcassets */; };
+		5F32BC5A232D880600A27899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F32BC58232D880600A27899 /* LaunchScreen.storyboard */; };
+		5F32BC65232D880600A27899 /* RxMVVMCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F32BC64232D880600A27899 /* RxMVVMCTests.swift */; };
+		5F32BC75232E095900A27899 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C00F22A54D5A00F17764 /* PhotoGridViewController.swift */; };
+		5F32BC76232E095E00A27899 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C00E22A54D5A00F17764 /* PhotoDetailViewController.swift */; };
+		5F32BC77232E10FF00A27899 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C01D22A54D5B00F17764 /* AppCoordinator.swift */; };
+		5F32BC78232E110800A27899 /* PhotoGridCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C01E22A54D5B00F17764 /* PhotoGridCoordinator.swift */; };
+		5F32BC7B232E150B00A27899 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F32BC7A232E150B00A27899 /* AppCoordinator.swift */; };
+		5F32BC7D232E159C00A27899 /* PhotoGridCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F32BC7C232E159C00A27899 /* PhotoGridCoordinator.swift */; };
 		5F34495F23219EC00080AA99 /* RxMVVMCShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F34495623219EC00080AA99 /* RxMVVMCShared.framework */; };
 		5F34496623219EC00080AA99 /* RxMVVMSharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F34496523219EC00080AA99 /* RxMVVMSharedTests.swift */; };
 		5F34496823219EC00080AA99 /* RxMVVMShared.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F34495823219EC00080AA99 /* RxMVVMShared.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -51,10 +61,6 @@
 		5FC6BFDF22A54B8800F17764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFDE22A54B8800F17764 /* AppDelegate.swift */; };
 		5FC6BFF422A54B8800F17764 /* RxMVVMCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6BFF322A54B8800F17764 /* RxMVVMCTests.swift */; };
 		5FC6C02D22A54D5B00F17764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6C00822A54D5A00F17764 /* Assets.xcassets */; };
-		5FC6C03022A54D5B00F17764 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C00E22A54D5A00F17764 /* PhotoDetailViewController.swift */; };
-		5FC6C03122A54D5B00F17764 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C00F22A54D5A00F17764 /* PhotoGridViewController.swift */; };
-		5FC6C03922A54D5B00F17764 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C01D22A54D5B00F17764 /* AppCoordinator.swift */; };
-		5FC6C03A22A54D5B00F17764 /* PhotoGridCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6C01E22A54D5B00F17764 /* PhotoGridCoordinator.swift */; };
 		5FC6C04022A54E8900F17764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6C03F22A54E8900F17764 /* LaunchScreen.storyboard */; };
 		5FDF41A22327B898004FF002 /* PhotoGridViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF41A02327B881004FF002 /* PhotoGridViewModelTests.swift */; };
 		5FFA894323269AB700C44406 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA89412326985F00C44406 /* Logger.swift */; };
@@ -62,6 +68,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5F32BC61232D880600A27899 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FC6BFD322A54B8700F17764 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F32BC4C232D880500A27899;
+			remoteInfo = RxMVVMC;
+		};
 		5F34496023219EC00080AA99 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5FC6BFD322A54B8700F17764 /* Project object */;
@@ -119,6 +132,16 @@
 		5F151448231FC4B200EEE9ED /* PhotoDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDownloadService.swift; sourceTree = "<group>"; };
 		5F15144D231FE79800EEE9ED /* URL+Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Endpoints.swift"; sourceTree = "<group>"; };
 		5F15147C23205E3D00EEE9ED /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
+		5F32BC4D232D880500A27899 /* RxMVVMC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxMVVMC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F32BC4F232D880500A27899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
+		5F32BC56232D880600A27899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F32BC59232D880600A27899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5F32BC5B232D880600A27899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F32BC60232D880600A27899 /* RxMVVMCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxMVVMCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F32BC64232D880600A27899 /* RxMVVMCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMVVMCTests.swift; sourceTree = "<group>"; };
+		5F32BC66232D880600A27899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F32BC7A232E150B00A27899 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		5F32BC7C232E159C00A27899 /* PhotoGridCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridCoordinator.swift; sourceTree = "<group>"; };
 		5F34495623219EC00080AA99 /* RxMVVMCShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxMVVMCShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F34495823219EC00080AA99 /* RxMVVMShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxMVVMShared.h; sourceTree = "<group>"; };
 		5F34495923219EC00080AA99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,6 +193,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5F32BC4A232D880500A27899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F32BC5D232D880600A27899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5F34495323219EC00080AA99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,9 +280,64 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		5F32BC4E232D880500A27899 /* RxMVVMC */ = {
+			isa = PBXGroup;
+			children = (
+				5F32BC6D232D887100A27899 /* Application */,
+				5F32BC79232E14F800A27899 /* Coordinatore */,
+				5F32BC6F232D8BA200A27899 /* ViewControllers */,
+				5F32BC6E232D8B4E00A27899 /* Resources */,
+			);
+			path = RxMVVMC;
+			sourceTree = "<group>";
+		};
+		5F32BC63232D880600A27899 /* RxMVVMCTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F32BC64232D880600A27899 /* RxMVVMCTests.swift */,
+				5F32BC66232D880600A27899 /* Info.plist */,
+			);
+			path = RxMVVMCTests;
+			sourceTree = "<group>";
+		};
+		5F32BC6D232D887100A27899 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5F32BC4F232D880500A27899 /* AppDelegate.swift */,
+				5F32BC5B232D880600A27899 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5F32BC6E232D8B4E00A27899 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5F32BC58232D880600A27899 /* LaunchScreen.storyboard */,
+				5F32BC56232D880600A27899 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F32BC6F232D8BA200A27899 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5F32BC79232E14F800A27899 /* Coordinatore */ = {
+			isa = PBXGroup;
+			children = (
+				5F32BC7A232E150B00A27899 /* AppCoordinator.swift */,
+				5F32BC7C232E159C00A27899 /* PhotoGridCoordinator.swift */,
+			);
+			path = Coordinatore;
+			sourceTree = "<group>";
+		};
 		5F34495723219EC00080AA99 /* RxMVVMCShared */ = {
 			isa = PBXGroup;
 			children = (
+				5FC6C00D22A54D5A00F17764 /* Controllers */,
 				5FC6C00B22A54D5A00F17764 /* ViewModels */,
 				5FC6C02422A54D5B00F17764 /* Views */,
 				5FC6C02222A54D5B00F17764 /* Models */,
@@ -305,6 +397,8 @@
 		5FC6BFD222A54B8700F17764 = {
 			isa = PBXGroup;
 			children = (
+				5F32BC4E232D880500A27899 /* RxMVVMC */,
+				5F32BC63232D880600A27899 /* RxMVVMCTests */,
 				5FC6BFDD22A54B8700F17764 /* RxMVVMC-iPad */,
 				5FC6BFF222A54B8800F17764 /* RxMVVMCTests-iPad */,
 				5F34495723219EC00080AA99 /* RxMVVMCShared */,
@@ -321,6 +415,8 @@
 				5FC6BFEF22A54B8800F17764 /* RxMVVMCTests-iPad.xctest */,
 				5F34495623219EC00080AA99 /* RxMVVMCShared.framework */,
 				5F34495E23219EC00080AA99 /* RxMVVMCSharedTests.xctest */,
+				5F32BC4D232D880500A27899 /* RxMVVMC.app */,
+				5F32BC60232D880600A27899 /* RxMVVMCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,7 +426,6 @@
 			children = (
 				5FC6BFFE22A54BAA00F17764 /* Application */,
 				5FC6C01C22A54D5B00F17764 /* Coordinator */,
-				5FC6C00D22A54D5A00F17764 /* Controllers */,
 				5FC6C00722A54D5A00F17764 /* Resources */,
 			);
 			path = "RxMVVMC-iPad";
@@ -514,6 +609,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		5F32BC4C232D880500A27899 /* RxMVVMC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F32BC67232D880600A27899 /* Build configuration list for PBXNativeTarget "RxMVVMC" */;
+			buildPhases = (
+				5F32BC49232D880500A27899 /* Sources */,
+				5F32BC4A232D880500A27899 /* Frameworks */,
+				5F32BC4B232D880500A27899 /* Resources */,
+				5F32BC7E232E16B600A27899 /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RxMVVMC;
+			productName = RxMVVMC;
+			productReference = 5F32BC4D232D880500A27899 /* RxMVVMC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5F32BC5F232D880600A27899 /* RxMVVMCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F32BC6A232D880600A27899 /* Build configuration list for PBXNativeTarget "RxMVVMCTests" */;
+			buildPhases = (
+				5F32BC5C232D880600A27899 /* Sources */,
+				5F32BC5D232D880600A27899 /* Frameworks */,
+				5F32BC5E232D880600A27899 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F32BC62232D880600A27899 /* PBXTargetDependency */,
+			);
+			name = RxMVVMCTests;
+			productName = RxMVVMCTests;
+			productReference = 5F32BC60232D880600A27899 /* RxMVVMCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5F34495523219EC00080AA99 /* RxMVVMCShared */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F34497123219EC00080AA99 /* Build configuration list for PBXNativeTarget "RxMVVMCShared" */;
@@ -606,6 +737,13 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Wasim;
 				TargetAttributes = {
+					5F32BC4C232D880500A27899 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					5F32BC5F232D880600A27899 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 5F32BC4C232D880500A27899;
+					};
 					5F34495523219EC00080AA99 = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -635,6 +773,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				5F32BC4C232D880500A27899 /* RxMVVMC */,
+				5F32BC5F232D880600A27899 /* RxMVVMCTests */,
 				5FC6BFDA22A54B8700F17764 /* RxMVVMC-iPad */,
 				5FC6BFEE22A54B8800F17764 /* RxMVVMCTests-iPad */,
 				5F34495523219EC00080AA99 /* RxMVVMCShared */,
@@ -644,6 +784,22 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5F32BC4B232D880500A27899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F32BC5A232D880600A27899 /* LaunchScreen.storyboard in Resources */,
+				5F32BC57232D880600A27899 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F32BC5E232D880600A27899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5F34495423219EC00080AA99 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -734,6 +890,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		5F32BC7E232E16B600A27899 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/carthage-input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/carthage-output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		5F3B34982321A68300EF69F2 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -832,6 +1008,24 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5F32BC49232D880500A27899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F32BC7B232E150B00A27899 /* AppCoordinator.swift in Sources */,
+				5F32BC50232D880500A27899 /* AppDelegate.swift in Sources */,
+				5F32BC7D232E159C00A27899 /* PhotoGridCoordinator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F32BC5C232D880600A27899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F32BC65232D880600A27899 /* RxMVVMCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5F34495223219EC00080AA99 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -842,6 +1036,7 @@
 				5F3B34AF2322258900EF69F2 /* GridCollectionView.swift in Sources */,
 				5F3B34B02322258900EF69F2 /* PhotoGridCell.swift in Sources */,
 				5F3B34B12322258900EF69F2 /* ResuableView.swift in Sources */,
+				5F32BC75232E095900A27899 /* PhotoGridViewController.swift in Sources */,
 				5F54818E2324579C000A38B0 /* PhotoDetailViewModel.swift in Sources */,
 				5F3B34B22322258900EF69F2 /* Coordinatable.swift in Sources */,
 				5F54818723244499000A38B0 /* DetailCollectionViewLayout.swift in Sources */,
@@ -860,6 +1055,7 @@
 				5F7A6D9323258CF9008FC28C /* ZoomCalculator.swift in Sources */,
 				5F3B34A82321ACBE00EF69F2 /* Array+Generic.swift in Sources */,
 				5F54819023246338000A38B0 /* UICollectionView+Generic.swift in Sources */,
+				5F32BC76232E095E00A27899 /* PhotoDetailViewController.swift in Sources */,
 				5F3B34A92321ACBE00EF69F2 /* CGSize+AllDimensions.swift in Sources */,
 				5F3B34AA2321ACBE00EF69F2 /* ObservalType+Generic.swift in Sources */,
 				5F3B34A22321A97800EF69F2 /* Photo.swift in Sources */,
@@ -882,12 +1078,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F32BC77232E10FF00A27899 /* AppCoordinator.swift in Sources */,
+				5F32BC78232E110800A27899 /* PhotoGridCoordinator.swift in Sources */,
 				5FC6BFDF22A54B8800F17764 /* AppDelegate.swift in Sources */,
 				5F3583F22327BE9600781F6F /* CGSize+Square.swift in Sources */,
-				5FC6C03922A54D5B00F17764 /* AppCoordinator.swift in Sources */,
-				5FC6C03A22A54D5B00F17764 /* PhotoGridCoordinator.swift in Sources */,
-				5FC6C03122A54D5B00F17764 /* PhotoGridViewController.swift in Sources */,
-				5FC6C03022A54D5B00F17764 /* PhotoDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +1096,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5F32BC62232D880600A27899 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F32BC4C232D880500A27899 /* RxMVVMC */;
+			targetProxy = 5F32BC61232D880600A27899 /* PBXContainerItemProxy */;
+		};
 		5F34496123219EC00080AA99 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5F34495523219EC00080AA99 /* RxMVVMCShared */;
@@ -924,7 +1123,108 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		5F32BC58232D880600A27899 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F32BC59232D880600A27899 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		5F32BC68232D880600A27899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JCPY7FXGR4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = RxMVVMC/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.grandcentrix.RxMVVMC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5F32BC69232D880600A27899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JCPY7FXGR4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = RxMVVMC/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.grandcentrix.RxMVVMC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		5F32BC6B232D880600A27899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JCPY7FXGR4;
+				INFOPLIST_FILE = RxMVVMCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.grandcentrix.RxMVVMCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxMVVMC.app/RxMVVMC";
+			};
+			name = Debug;
+		};
+		5F32BC6C232D880600A27899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JCPY7FXGR4;
+				INFOPLIST_FILE = RxMVVMCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.grandcentrix.RxMVVMCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxMVVMC.app/RxMVVMC";
+			};
+			name = Release;
+		};
 		5F34496D23219EC00080AA99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1170,7 +1470,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.grandcentrix.RxMVVMC;
+				PRODUCT_BUNDLE_IDENTIFIER = net.grandcentrix.RxMVVMC.iPad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "grandcentrix Enterprise Wildcard Development";
 				SWIFT_VERSION = 5.0;
@@ -1197,7 +1497,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.grandcentrix.RxMVVMC;
+				PRODUCT_BUNDLE_IDENTIFIER = net.grandcentrix.RxMVVMC.iPad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "grandcentrix Enterprise Wildcard Development";
 				SWIFT_VERSION = 5.0;
@@ -1254,6 +1554,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5F32BC67232D880600A27899 /* Build configuration list for PBXNativeTarget "RxMVVMC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F32BC68232D880600A27899 /* Debug */,
+				5F32BC69232D880600A27899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F32BC6A232D880600A27899 /* Build configuration list for PBXNativeTarget "RxMVVMCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F32BC6B232D880600A27899 /* Debug */,
+				5F32BC6C232D880600A27899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5F34497123219EC00080AA99 /* Build configuration list for PBXNativeTarget "RxMVVMCShared" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
