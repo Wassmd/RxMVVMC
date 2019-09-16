@@ -426,6 +426,7 @@
 		5F54818A23244E6D000A38B0 /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				5F54818B23244E9D000A38B0 /* PhotoViewerScrollView.swift */,
 			);
 			path = ScrollView;
 			sourceTree = "<group>";
@@ -676,7 +677,6 @@
 				5F151444231FA6D800EEE9ED /* Custom */,
 				5FC6C02622A54D5B00F17764 /* CollectionViewCell */,
 				5F54818A23244E6D000A38B0 /* ScrollView */,
-				5F54818B23244E9D000A38B0 /* PhotoViewerScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
