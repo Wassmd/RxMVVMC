@@ -2,8 +2,8 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-extension ObservableType where E: OptionalType {
-    func filterNotNil() -> Observable<E.Wrapped> {
+extension ObservableType where Element: OptionalType {
+    func filterNotNil() -> Observable<Element.Wrapped> {
         return filter { $0.asOptional != nil }.map { $0.asOptional! }
     }
 }
